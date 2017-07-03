@@ -1,0 +1,23 @@
+#using ReqToImpTransformator.*
+#using AttrCondDefLibrary.*
+
+#rule ReqContainerToImplContainerRule #with ReqToImpTransformator
+
+#source { 
+	++ reqContainer : requirements.Container 
+}
+
+#target {
+	++ implContainer : implementation.Container
+}
+
+#correspondence {
+	++ reqContainerToImplContainer : ReqContainerToImplContainer {
+		#src->reqContainer
+		#trg->implContainer
+	}
+}
+
+#attributeConditions {
+	
+}

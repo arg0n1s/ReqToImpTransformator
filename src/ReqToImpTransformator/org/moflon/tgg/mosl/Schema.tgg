@@ -1,0 +1,24 @@
+#import "platform:/plugin/mbse_metamodels/model/implementation.ecore"
+#import "platform:/plugin/mbse_metamodels/model/requirements.ecore"
+
+#schema ReqToImpTransformator
+	
+#source {
+	requirements
+}
+
+#target { 
+	implementation
+} 
+
+#correspondence {
+	ReqContainerToImplContainer{
+		#src->requirements.Container
+		#trg->implementation.Container
+	}
+	
+}
+
+#attributeConditions {
+	
+}
