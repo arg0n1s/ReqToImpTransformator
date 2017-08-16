@@ -23,6 +23,7 @@ public class ReqToImpTransformatorConsistencyCheck extends SynchronizationHelper
 		helper.loadTrg("instances/trg.xmi");
 
 		boolean prepareDeltas = true;
+		helper.setUserDefiendILPConstraintProvider(new CustomILPConstraintProvider());
 		helper.createCorrespondences(prepareDeltas);
 		
 		if(prepareDeltas){
