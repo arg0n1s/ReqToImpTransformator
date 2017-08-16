@@ -16,6 +16,10 @@
 		#src->requirements.Container
 		#trg->implementation.Container
 	}
+	ReqAgentToImplDevice{
+		#src->requirements.Agent
+		#trg->implementation.Device
+	}
 	
 }
 

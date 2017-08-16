@@ -1,0 +1,25 @@
+#using ReqToImpTransformator.*
+#using AttrCondDefLibrary.*
+
+#rule ReqProviderToServerRule #extends ReqAgentToDeviceRule #with ReqToImpTransformator
+
+#source { 
+	reqContainer : requirements.Container 
+	reqProvider : requirements.Provider
+}
+
+#target {
+	implContainer : implementation.Container 
+	implServer : implementation.Server
+}
+
+#correspondence {
+	 reqContainerToImplContainer : ReqContainerToImplContainer {
+		#src->reqContainer
+		#trg->implContainer
+	}
+}
+
+#attributeConditions {
+	
+}
