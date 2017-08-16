@@ -13,8 +13,14 @@
 #target {
 	implContainer : implementation.Container {
 		 -devices->implDevice
+		 -cables->cable
 	}
-	 	implDevice : implementation.Device
+	
+ 	implDevice : implementation.Device {
+	 	-outgoing->cable		
+ 	}
+ 	
+ 	cable : implementation.Cable
 }
 
 #correspondence {

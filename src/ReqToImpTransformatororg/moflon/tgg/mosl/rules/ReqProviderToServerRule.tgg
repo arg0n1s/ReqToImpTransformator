@@ -8,7 +8,11 @@
 }
 
 #target {
-	 implDevice : implementation.Server
+	 implDevice : implementation.Server {
+	 	-outgoing->cable
+	 }
+	 
+	 cable : implementation.Cable
 }
 
 #correspondence {
