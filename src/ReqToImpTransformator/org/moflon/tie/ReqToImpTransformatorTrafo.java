@@ -26,7 +26,7 @@ public class ReqToImpTransformatorTrafo extends SynchronizationHelper{
 		
 		// Backward Transformation
 		helper = new ReqToImpTransformatorTrafo();
-		helper.performBackward("instances/bwd.src.xmi");
+		//helper.performBackward("instances/bwd.src.xmi");
 	}
 
 	public void performForward() {

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:DeltaSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:req="platform:/plugin/mbse_metamodels/model/requirements.ecore">
+  <targetModel href="src.xmi#/"/>
+  <addedEdges trg="//@addedNodes.2" name="agents">
+    <src href="src.xmi#/"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.1" name="agents">
+    <src href="src.xmi#/"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.0" name="agents">
+    <src href="src.xmi#/"/>
+  </addedEdges>
+  <addedNodes xsi:type="req:Consumer" name="pc1" speed="2"/>
+  <addedNodes xsi:type="req:Consumer" name="pc3" speed="2"/>
+  <addedNodes xsi:type="req:Consumer" name="pc2" speed="2"/>
+</org.moflon.tgg.runtime:DeltaSpecification>

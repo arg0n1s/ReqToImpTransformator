@@ -1,7 +1,7 @@
 #using ReqToImpTransformator.*
 #using AttrCondDefLibrary.*
 
-#rule ImplCopperIgnoreRule #extends ImplCableIgnoreRule #with ReqToImpTransformator
+#abstract #rule ImplCopperIgnoreRule #extends ImplCableIgnoreRule #with ReqToImpTransformator
 
 #source { 
 	
