@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <impl:Container xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:impl="platform:/plugin/mbse_metamodels/model/implementation.ecore">
-  <devices xsi:type="impl:Server" name="s1"/>
-  <devices xsi:type="impl:Server" name="s2"/>
+  <devices xsi:type="impl:Server" name="s1" maxSlots="1" MTBF="1000"/>
+  <devices xsi:type="impl:Server" name="s2" maxSlots="2" MTBF="300"/>
   <devices xsi:type="impl:Computer" name="pc1"/>
   <devices xsi:type="impl:Computer" name="pc3"/>
   <devices xsi:type="impl:Router" name="r2"/>

@@ -5,10 +5,6 @@
     <target href="trg.xmi#/"/>
   </correspondences>
   <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.1"/>
-    <target href="trg.xmi#//@devices.0"/>
-  </correspondences>
-  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
     <source href="src.xmi#//@agents.0"/>
     <target href="trg.xmi#//@devices.1"/>
   </correspondences>
