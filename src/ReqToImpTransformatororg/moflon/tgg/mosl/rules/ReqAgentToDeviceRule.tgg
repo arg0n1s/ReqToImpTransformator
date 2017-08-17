@@ -16,9 +16,7 @@
 		 -cables->cable
 	}
 	
- 	implDevice : implementation.Device {
-	 	-outgoing->cable		
- 	}
+ 	implDevice : implementation.Device
  	
  	cable : implementation.Cable
 }

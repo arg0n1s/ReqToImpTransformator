@@ -1,0 +1,27 @@
+#using ReqToImpTransformator.*
+#using AttrCondDefLibrary.*
+
+#rule ReqConsumerToComputerRule #extends ReqAgentToDeviceRule #with ReqToImpTransformator
+
+#source { 
+	++ reqAgent : requirements.Consumer
+}
+
+#target {
+	 implDevice : implementation.Computer {
+	 	-incoming->cable
+	 }
+	 
+	 cable : implementation.Cable
+}
+
+#correspondence {
+	++ reqAgentToImplDevice : ReqAgentToImplDevice {
+		#src->reqAgent
+		#trg->implDevice
+	}
+}
+
+#attributeConditions {
+	
+}
