@@ -6,10 +6,10 @@
     xmlns:req="platform:/plugin/mbse_metamodels/model/requirements.ecore"
     xsi:schemaLocation="platform:/plugin/mbse_metamodels/model/requirements.ecore ../../mbse_metamodels/model/requirements.ecore">
   <agents xsi:type="req:Provider"
-      name="s1"
+      name="p1"
       speed="3"/>
   <agents xsi:type="req:Provider"
-      name="s2"
+      name="p2"
       speed="3"/>
   <agents xsi:type="req:Consumer"
       name="pc1"
@@ -22,5 +22,5 @@
       speed="2"/>
   <agents xsi:type="req:Provider"
       name="test"
-      speed="2"/>
+      speed="3"/>
 </req:Container>

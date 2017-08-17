@@ -27,13 +27,14 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		
 		Collection<UserDefinedILPConstraint> results = new ArrayList<>();
 		
-		results = maxSlotsConstraint(protocol, matchesMap, results);
-		results = speedConstraint(protocol, matchesMap, results);
+		results = maxSlotsConstraint(matchesMap, results);
+		//results = MTBFConstraint(matchesMap, results);
+		results = speedConstraint(matchesMap, results);
 		
 		return results;
 	}
 	
-	private Collection<UserDefinedILPConstraint> maxSlotsConstraint(ConsistencyCheckPrecedenceGraph protocol, Map<CCMatch, Integer> matchesMap, Collection<UserDefinedILPConstraint> results) {
+	private Collection<UserDefinedILPConstraint> maxSlotsConstraint(Map<CCMatch, Integer> matchesMap, Collection<UserDefinedILPConstraint> results) {
 		
 		Map<Server, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
 		
@@ -53,14 +54,36 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		return results;
 	}
 	
-	private Collection<UserDefinedILPConstraint> speedConstraint(ConsistencyCheckPrecedenceGraph protocol, Map<CCMatch, Integer> matchesMap, Collection<UserDefinedILPConstraint> results) {
+	/** private Collection<UserDefinedILPConstraint> MTBFConstraint(Map<CCMatch, Integer> matchesMap, Collection<UserDefinedILPConstraint> results) {
+		
+		Map<Provider, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
+		
+		for (CCMatch m : matchesMap.keySet()) {
+			Provider p = (Provider)m.getSourceMatch().getNodeMappings().get("reqAgent");
+			Server s = (Server)m.getTargetMatch().getNodeMappings().get("implDevice");
+			
+			HashMap<Integer, Double> coefficients = idToCoefficientMap.getOrDefault(p, new HashMap<>());
+			coefficients.put(matchesMap.get(m), s.getMTBF().doubleValue());
+			
+			idToCoefficientMap.put(p, coefficients);
+		}
+		
+		for(Provider p : idToCoefficientMap.keySet()) {
+			//System.out.println(idToCoefficientMap.get(s));
+			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(p), ">=", 0));
+		}
+
+		return results;
+	} **/
+	
+	private Collection<UserDefinedILPConstraint> speedConstraint(Map<CCMatch, Integer> matchesMap, Collection<UserDefinedILPConstraint> results) {
 		Map<String, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
 		Map<String, Double> serverSpeedMap = new HashMap<>();
 		
 		for (CCMatch m : matchesMap.keySet()) {
 			Server s = (Server)m.getTargetMatch().getNodeMappings().get("implDevice");
 			Provider p = (Provider)m.getSourceMatch().getNodeMappings().get("reqAgent");
-			
+			System.out.println(s.getName() + " " + p.getName());
 			if(!serverSpeedMap.containsKey(s.getName())) {
 				double serverSpeed = 0.0;
 				for (Cable c : s.getOutgoing()) {
@@ -76,7 +99,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 			
 			idToCoefficientMap.put(s.getName(), coefficients);
 		}
-		
+		System.out.println(idToCoefficientMap);
 		for(String serverName : idToCoefficientMap.keySet()) {
 			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(serverName), "<=", serverSpeedMap.get(serverName)));
 		}
