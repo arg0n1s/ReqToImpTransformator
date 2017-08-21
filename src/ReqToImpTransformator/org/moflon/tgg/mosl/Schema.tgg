@@ -1,10 +1,12 @@
 #import "platform:/plugin/mbse_metamodels/model/implementation.ecore"
 #import "platform:/plugin/mbse_metamodels/model/requirements.ecore"
+#import "platform:/plugin/VirtualMapping/model/virtualMapping.ecore"
 
 #schema ReqToImpTransformator
 	
 #source {
 	requirements
+	virtualMapping
 }
 
 #target { 
@@ -12,7 +14,7 @@
 } 
 
 #correspondence {
-	ReqContainerToImplContainer{
+	ReqContainerToImplContainer{ 
 		#src->requirements.Container
 		#trg->implementation.Container
 	}

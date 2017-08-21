@@ -22,5 +22,5 @@
       speed="2"/>
   <agents xsi:type="req:Provider"
       name="test"
-      speed="3"/>
+      speed="2"/>
 </req:Container>
