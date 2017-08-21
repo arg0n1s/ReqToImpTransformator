@@ -23,7 +23,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		Map<CCMatch, Integer> serverMatchesMap = new HashMap<>();
 		Map<CCMatch, Integer> computerMatchesMap = new HashMap<>();
 		for(CCMatch m : protocol.getMatches()) {
-			System.out.println("RuleName: " + m.getRuleName());
+			//System.out.println("RuleName: " + m.getRuleName());
 			
 			if(m.getRuleName().equals("ReqProviderToServerRule")) {
 				serverMatchesMap.put(m, protocol.matchToInt(m));
@@ -33,15 +33,14 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 			}
 		}
 		
-		System.out.println("serverMatches: " + serverMatchesMap.keySet().size());
-		System.out.println("computerMatches: " + computerMatchesMap.keySet().size());
+		//System.out.println("serverMatches: " + serverMatchesMap.keySet().size());
+		//System.out.println("computerMatches: " + computerMatchesMap.keySet().size());
 		
 		Collection<UserDefinedILPConstraint> results = new ArrayList<>();
 		
-		//results = maxSlotsConstraint(serverMatchesMap, results);
-		results = MTBFConstraint(serverMatchesMap, results);
-		//results = serverSpeedConstraint(serverMatchesMap, results);
-		//results = computerSpeedConstraint(computerMatchesMap, results);
+		results = maxSlotsConstraint(serverMatchesMap, results);
+		results = serverSpeedConstraint(serverMatchesMap, results);
+		results = computerSpeedConstraint(computerMatchesMap, results);
 		
 		return results;
 	}
@@ -61,28 +60,6 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		
 		for(Server s : idToCoefficientMap.keySet()) {
 			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(s), "<=", s.getMaxSlots().doubleValue()));
-		}
-
-		return results;
-	}
-	
-	private Collection<UserDefinedILPConstraint> MTBFConstraint(Map<CCMatch, Integer> matchesMap, Collection<UserDefinedILPConstraint> results) {
-		
-		Map<Provider, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
-		
-		for (CCMatch m : matchesMap.keySet()) {
-			Provider p = (Provider)m.getSourceMatch().getNodeMappings().get("reqAgent");
-			Server s = (Server)m.getTargetMatch().getNodeMappings().get("implDevice");
-			
-			HashMap<Integer, Double> coefficients = idToCoefficientMap.getOrDefault(p, new HashMap<>());
-			coefficients.put(matchesMap.get(m), s.getMTBF().doubleValue());
-			
-			idToCoefficientMap.put(p, coefficients);
-		}
-		
-		for(Provider p : idToCoefficientMap.keySet()) {
-			//System.out.println(idToCoefficientMap.get(s));
-			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(p), ">=", 0));
 		}
 
 		return results;
@@ -134,7 +111,7 @@ private Collection<UserDefinedILPConstraint> computerSpeedConstraint(Map<CCMatch
 				for (Cable c : computer.getIncoming()) {
 					computerSpeed += c.getSpeed().doubleValue();
 				}
-				System.out.println(computerSpeed);
+				//System.out.println(computerSpeed);
 				// In order to simplify things, we assume that the maximum computer speed (actually we are talking about throughput) 
 				// is equals to the sum over the speed of its Incoming cables.
 				computerSpeedMap.put(computer.getName(), computerSpeed);
