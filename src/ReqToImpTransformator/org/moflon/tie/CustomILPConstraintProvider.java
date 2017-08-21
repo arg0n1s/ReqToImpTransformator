@@ -38,10 +38,10 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		
 		Collection<UserDefinedILPConstraint> results = new ArrayList<>();
 		
-		results = maxSlotsConstraint(serverMatchesMap, results);
-		//results = MTBFConstraint(matchesMap, results);
-		results = serverSpeedConstraint(serverMatchesMap, results);
-		results = computerSpeedConstraint(computerMatchesMap, results);
+		//results = maxSlotsConstraint(serverMatchesMap, results);
+		results = MTBFConstraint(serverMatchesMap, results);
+		//results = serverSpeedConstraint(serverMatchesMap, results);
+		//results = computerSpeedConstraint(computerMatchesMap, results);
 		
 		return results;
 	}
@@ -66,7 +66,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		return results;
 	}
 	
-	/** private Collection<UserDefinedILPConstraint> MTBFConstraint(Map<CCMatch, Integer> matchesMap, Collection<UserDefinedILPConstraint> results) {
+	private Collection<UserDefinedILPConstraint> MTBFConstraint(Map<CCMatch, Integer> matchesMap, Collection<UserDefinedILPConstraint> results) {
 		
 		Map<Provider, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
 		
@@ -86,7 +86,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		}
 
 		return results;
-	} **/
+	}
 	
 	private Collection<UserDefinedILPConstraint> serverSpeedConstraint(Map<CCMatch, Integer> matchesMap, Collection<UserDefinedILPConstraint> results) {
 		Map<String, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();

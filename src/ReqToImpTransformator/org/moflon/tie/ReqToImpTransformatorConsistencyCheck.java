@@ -24,6 +24,7 @@ public class ReqToImpTransformatorConsistencyCheck extends SynchronizationHelper
 
 		boolean prepareDeltas = true;
 		helper.setUserDefiendILPConstraintProvider(new CustomILPConstraintProvider());
+		helper.setUserDefiendILPObjectiveProvider(new CustomILPObjectiveProvider());
 		helper.createCorrespondences(prepareDeltas);
 		
 		if(prepareDeltas){
