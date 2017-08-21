@@ -9,5 +9,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="lib" path="/Library/gurobi751/mac64/lib/gurobi-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Users/Basti/Uni/IST/Projekte/ReqToImpTransformator/lib/trove-3.1a1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

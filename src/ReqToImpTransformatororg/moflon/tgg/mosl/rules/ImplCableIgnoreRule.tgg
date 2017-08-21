@@ -4,7 +4,7 @@
 #abstract #rule ImplCableIgnoreRule #with ReqToImpTransformator
 
 #source { 
-	reqContainer : requirements.Container 
+	reqContainer : requirements.Container
 }
 
 #target {
