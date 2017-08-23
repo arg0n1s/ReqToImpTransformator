@@ -1,0 +1,27 @@
+#using ReqToImpTransformator.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule ImplDeviceIgnoreRule #with ReqToImpTransformator
+
+#source { 
+	reqContainer : requirements.Container 
+}
+
+#target {
+	implContainer : implementation.Container {
+		++ -devices->device
+	}
+	
+	++ device : implementation.Device
+}
+
+#correspondence {
+	reqContainerToImplContainer : ReqContainerToImplContainer {
+		#src->reqContainer
+		#trg->implContainer
+	}
+}
+
+#attributeConditions {
+	
+}

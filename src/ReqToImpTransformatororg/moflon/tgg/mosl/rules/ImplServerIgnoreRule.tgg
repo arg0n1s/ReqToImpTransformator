@@ -1,0 +1,20 @@
+#using ReqToImpTransformator.*
+#using AttrCondDefLibrary.*
+
+#rule ImplServerIgnoreRule #extends ImplDeviceIgnoreRule #with ReqToImpTransformator
+
+#source { 
+	
+}
+
+#target {
+	++ device : implementation.Server
+}
+
+#correspondence {
+	
+}
+
+#attributeConditions {
+	
+}

@@ -15,7 +15,8 @@
 	
 	implContainer : implementation.Container {
 		-devices->router
-		++ -devices->server
+		-devices->server
+		-cables->cable
 	}
 	
 	router : implementation.Router {
@@ -23,10 +24,10 @@
 	}
 	
 	cable : implementation.Cable {
-		++ -target->server
+		 -target->server
 	}
 	
-	++ server : implementation.Server
+	server : implementation.Server
 
 }
 
@@ -34,6 +35,11 @@
 	reqContainerToImplContainer : ReqContainerToImplContainer {
 		#src->reqContainer
 		#trg->implContainer
+	}
+	
+	virtualNodeToRouter : VirtualNodeToRouter {
+		#src->virtualNode
+		#trg->router
 	}
 	
 	++ virtualNodeToServer : VirtualNodeToServer {

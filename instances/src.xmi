@@ -23,4 +23,5 @@
   <agents xsi:type="req:Provider"
       name="test"
       speed="3"/>
+  <networkSpan/>
 </req:Container>
