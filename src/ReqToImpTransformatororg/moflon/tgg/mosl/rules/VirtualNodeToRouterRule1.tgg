@@ -13,10 +13,10 @@
 #target {
 	
 	implContainer : implementation.Container {
-		++ -devices->router
+		-devices->router
 	}
 	
-	++ router : implementation.Router
+	router : implementation.Router
 
 }
 

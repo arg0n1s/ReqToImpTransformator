@@ -26,6 +26,9 @@ public class CustomILPObjectiveProvider implements UserDefinedILPObjectiveProvid
 			else if(match.getRuleName().equals("VirtualNodeToRouterRule2")||
 					match.getRuleName().equals("VirtualNodeToComputerRule")||
 					match.getRuleName().equals("VirtualNodeToServerRule")){
+				//if(match.getRuleName().equals("VirtualNodeToComputerRule")) {
+				//	System.out.println("Hola");
+				//}
 				weight = (double) match.getSourceMatch().getCreatedHashSet().size();
 				weight += match.getTargetMatch().getCreatedHashSet().size();
 				weight *= -0.0001;
