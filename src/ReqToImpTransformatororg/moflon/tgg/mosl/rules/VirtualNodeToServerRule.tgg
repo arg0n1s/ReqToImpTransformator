@@ -1,0 +1,44 @@
+#using ReqToImpTransformator.*
+#using AttrCondDefLibrary.*
+
+#rule VirtualNodeToServerRule #with ReqToImpTransformator
+
+#source {
+	virtualNode : VirtualNode
+	reqContainer : requirements.Container 
+}
+
+#target {
+	
+	implContainer : implementation.Container {
+		-devices->router
+		++ -devices->server
+	}
+	
+	router : implementation.Router {
+		++ -outgoing->cable
+	}
+	
+	cable : implementation.Cable {
+		++ -target->server
+	}
+	
+	++ server : implementation.Server
+
+}
+
+#correspondence {
+	reqContainerToImplContainer : ReqContainerToImplContainer {
+		#src->reqContainer
+		#trg->implContainer
+	}
+	
+	++ virtualNodeToServer : VirtualNodeToServer {
+		#src->virtualNode
+		#trg->server
+	}
+}
+
+#attributeConditions {
+	
+}

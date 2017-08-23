@@ -34,6 +34,11 @@
 		#trg->Computer
 	}
 	
+	VirtualNodeToServer{
+		#src->VirtualNode
+		#trg->Server
+	}
+	
 }
 
 #attributeConditions {
