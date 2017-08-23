@@ -1,7 +1,7 @@
 #using ReqToImpTransformator.*
 #using AttrCondDefLibrary.*
 
-#rule ImplServerIgnoreRule #extends ImplDeviceIgnoreRule #with ReqToImpTransformator
+#abstract #rule ImplServerIgnoreRule #extends ImplDeviceIgnoreRule #with ReqToImpTransformator
 
 #source { 
 	
