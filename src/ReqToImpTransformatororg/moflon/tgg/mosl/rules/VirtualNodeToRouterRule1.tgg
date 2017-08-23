@@ -1,0 +1,35 @@
+#using ReqToImpTransformator.*
+#using AttrCondDefLibrary.*
+
+#rule VirtualNodeToRouterRule1 #with ReqToImpTransformator
+
+#source {
+	virtualNode : VirtualNode
+	reqContainer : requirements.Container 
+}
+
+#target {
+	
+	implContainer : implementation.Container {
+		++ -devices->router
+	}
+	
+	++ router : implementation.Router
+
+}
+
+#correspondence {
+	reqContainerToImplContainer : ReqContainerToImplContainer {
+		#src->reqContainer
+		#trg->implContainer
+	}
+	
+	++ virtualNodeToRouter : VirtualNodeToRouter {
+		#src->virtualNode
+		#trg->router
+	}
+}
+
+#attributeConditions {
+	
+}

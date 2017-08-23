@@ -1,7 +1,7 @@
 #using ReqToImpTransformator.*
 #using AttrCondDefLibrary.*
 
-#rule ImplRouterIgnoreRule #extends ImplDeviceIgnoreRule #with ReqToImpTransformator
+#abstract #rule ImplRouterIgnoreRule #extends ImplDeviceIgnoreRule #with ReqToImpTransformator
 
 #source { 
 	

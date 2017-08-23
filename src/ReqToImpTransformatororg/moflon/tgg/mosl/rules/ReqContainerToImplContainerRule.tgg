@@ -4,7 +4,8 @@
 #rule ReqContainerToImplContainerRule #with ReqToImpTransformator
 
 #source { 
-	++ reqContainer : requirements.Container 
+	++ reqContainer : requirements.Container
+	++ virtualNode : VirtualNode
 }
 
 #target {
