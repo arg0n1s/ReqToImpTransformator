@@ -4,5 +4,5 @@
   <addedEdges trg="//@addedNodes.0" name="agents">
     <src href="cc_result/src.xmi#/"/>
   </addedEdges>
-  <addedNodes xsi:type="req:Consumer" name="pc1" speed="2"/>
+  <addedNodes xsi:type="req:Consumer" name="pc3" speed="2"/>
 </org.moflon.tgg.runtime:DeltaSpecification>

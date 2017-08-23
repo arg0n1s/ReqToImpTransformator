@@ -9,14 +9,12 @@
       outgoing="//@cables.3 //@cables.0"
       name="s1"
       maxSlots="2"
-      MTBF="10"
-      maxClients="10"/>
+      MTBF="10"/>
   <devices xsi:type="impl:Server"
       outgoing="//@cables.4 //@cables.1"
       name="s2"
       maxSlots="2"
-      MTBF="50"
-      maxClients="10"/>
+      MTBF="50"/>
   <devices xsi:type="impl:Computer"
       incoming="//@cables.5"
       name="pc1"/>
