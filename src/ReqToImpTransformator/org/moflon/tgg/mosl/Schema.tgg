@@ -6,12 +6,11 @@
 	
 #source {
 	requirements
-	virtualMapping
 }
 
 #target { 
 	implementation
-} 
+}  
 
 #correspondence {
 	ReqContainerToImplContainer{
@@ -25,17 +24,17 @@
 	}
 	
 	VirtualNodeToRouter{
-		#src->VirtualNode
+		#src->NetworkSpan
 		#trg->Router
 	}
 	
 	VirtualNodeToComputer{
-		#src->VirtualNode
+		#src->NetworkSpan
 		#trg->Computer
 	}
 	
 	VirtualNodeToServer{
-		#src->VirtualNode
+		#src->NetworkSpan
 		#trg->Server
 	}
 	

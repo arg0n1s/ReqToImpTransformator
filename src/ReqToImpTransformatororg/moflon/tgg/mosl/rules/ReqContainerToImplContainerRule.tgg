@@ -4,8 +4,10 @@
 #rule ReqContainerToImplContainerRule #with ReqToImpTransformator
 
 #source { 
-	++ reqContainer : requirements.Container
-	++ virtualNode : VirtualNode
+	++ reqContainer : requirements.Container{
+		++ -networkSpan->virtualNode
+	}
+	++ virtualNode : NetworkSpan
 }
 
 #target {

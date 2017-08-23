@@ -4,8 +4,10 @@
 #rule VirtualNodeToRouterRule2 #with ReqToImpTransformator
 
 #source {
-	virtualNode : VirtualNode
-	reqContainer : requirements.Container 
+	virtualNode : NetworkSpan
+	reqContainer : requirements.Container{
+		-networkSpan->virtualNode
+	}
 }
 
 #target {
@@ -16,7 +18,7 @@
 	}
 	
 	router : implementation.Router {
-		++ -outgoing->cable
+		 -outgoing->cable
 	}
 	
 	cable : implementation.Cable {
