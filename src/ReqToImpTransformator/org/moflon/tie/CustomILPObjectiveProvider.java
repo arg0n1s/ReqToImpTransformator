@@ -17,7 +17,8 @@ public class CustomILPObjectiveProvider implements UserDefinedILPObjectiveProvid
 		
 		for (int matchId : protocol.getMatchIDs().toArray()) {
 			CCMatch match = protocol.intToMatch(matchId);
-			Double weight;
+			Double weight = 0.0;
+			
 			if(match.getRuleName().equals("ReqProviderToServerRule")){
 				Server s = (Server)match.getTargetMatch().getNodeMappings().get("implDevice");
 				weight = s.getMTBF().doubleValue();
@@ -29,14 +30,18 @@ public class CustomILPObjectiveProvider implements UserDefinedILPObjectiveProvid
 				//if(match.getRuleName().equals("VirtualNodeToComputerRule")) {
 				//	System.out.println("Hola");
 				//}
-				weight = (double) match.getSourceMatch().getCreatedHashSet().size();
-				weight += match.getTargetMatch().getCreatedHashSet().size();
+				//weight = (double) match.getSourceMatch().getCreatedHashSet().size();
+				weight = (double) match.getCreatedHashSet().size();
+				//weight += match.getTargetMatch().getCreatedHashSet().size();
 				weight *= -0.0001;
 			}
 			
 			else{
-				weight = (double) match.getSourceMatch().getCreatedHashSet().size();
-				weight += match.getTargetMatch().getCreatedHashSet().size();
+				//weight = (double) match.getSourceMatch().getCreatedHashSet().size();
+				//weight += match.getTargetMatch().getCreatedHashSet().size();
+				weight = (double) match.getCreatedHashSet().size();
+				//System.out.println(weight);
+				//System.out.println((double) match.getCreatedHashSet().size());
 			}
 			idsToCoefficients.put(matchId, weight);
 		}

@@ -4,6 +4,6 @@
   <agents xsi:type="req:Provider" name="p2" speed="3"/>
   <agents xsi:type="req:Consumer" name="pc1" speed="2"/>
   <agents xsi:type="req:Consumer" name="pc2" speed="2"/>
-  <agents xsi:type="req:Provider" name="test" speed="3"/>
+  <agents xsi:type="req:Provider" name="p3" speed="3"/>
   <networkSpan/>
 </req:Container>
