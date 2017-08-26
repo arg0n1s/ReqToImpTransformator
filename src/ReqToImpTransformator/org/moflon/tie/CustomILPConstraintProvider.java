@@ -3,8 +3,10 @@ package ReqToImpTransformator.org.moflon.tie;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EObject;
 import org.moflon.tgg.algorithm.ccutils.UserDefinedILPConstraint;
 import org.moflon.tgg.algorithm.ccutils.UserDefinedILPConstraintProvider;
 import org.moflon.tgg.algorithm.datastructures.ConsistencyCheckPrecedenceGraph;
@@ -12,32 +14,72 @@ import org.moflon.tgg.runtime.CCMatch;
 
 import implementation.Cable;
 import implementation.Computer;
+import implementation.Container;
 import implementation.Router;
 import implementation.Server;
 import requirements.Consumer;
 import requirements.Provider;
 
 public class CustomILPConstraintProvider implements UserDefinedILPConstraintProvider {
+	// Hackety hack hack...
+	public static LinkedList<EObject> computers;
+	public static LinkedList<EObject> servers;
+	public static LinkedList<EObject> vertices;
+	public static LinkedList<EObject> edges;
+	public static LinkedList<EObject> consumers;
+	public static LinkedList<EObject> providers;
+	
+	// An elegant way to say, screw pattern matching we're going to do this our way.
+	public static void initHack(Container c, requirements.Container c2){
+		computers = new LinkedList<EObject>();
+		servers = new LinkedList<EObject>();
+		vertices = new LinkedList<EObject>();
+		edges = new LinkedList<EObject>();
+		consumers = new LinkedList<EObject>();
+		providers = new LinkedList<EObject>();
+		
+		for(EObject current: c.eContents()){
+			if(current.eClass().getInstanceClassName().contains("Cable")){
+				edges.add(current);
+			}else{
+				vertices.add(current);
+			}
+			if(current.eClass().getInstanceClassName().contains("Computer")){
+				computers.add(current);
+			}
+			else if(current.eClass().getInstanceClassName().contains("Server")){
+				servers.add(current);
+			}
+		}
+		
+		for(EObject current: c2.eContents()){
+			if(current.eClass().getInstanceClassName().contains("Consumer")){
+				consumers.add(current);
+			}
+			else if(current.eClass().getInstanceClassName().contains("Provider")){
+				providers.add(current);
+			}
+		}
+	}
 
 	@Override
 	public Collection<UserDefinedILPConstraint> getUserDefinedConstraints(ConsistencyCheckPrecedenceGraph protocol) {
+		System.out.println("CSP");
 		Map<CCMatch, Integer> serverMatchesMap = new HashMap<>();
 		Map<CCMatch, Integer> computerMatchesMap = new HashMap<>();
 		Map<CCMatch, Integer> initRouterMatchesMap = new HashMap<>();
 		for (CCMatch m : protocol.getMatches()) {
-			// System.out.println("RuleName: " + m.getRuleName());
 
 			if (m.getRuleName().equals("ReqProviderToServerRule")) {
 				serverMatchesMap.put(m, protocol.matchToInt(m));
 			} else if (m.getRuleName().equals("ReqConsumerToComputerRule")) {
 				computerMatchesMap.put(m, protocol.matchToInt(m));
 			}
+			// Hack begins here
+			if(m.getRuleName().equals("ReqContainerToImplContainerRule")){
+				initHack((Container)m.getTargetMatch().getNodeMappings().get("implContainer"), (requirements.Container)m.getSourceMatch().getNodeMappings().get("reqContainer"));
+			}
 		}
-
-		// System.out.println("serverMatches: " +
-		// serverMatchesMap.keySet().size());
-		// System.out.println("computerMatches: " +
-		// computerMatchesMap.keySet().size());
 
 		Collection<UserDefinedILPConstraint> results = new ArrayList<>();
 
@@ -86,7 +128,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 				}
 				// In order to simplify things, we assume that the maximum
 				// server speed (actually we are talking about throughput)
-				// is equals to the sum over the speed of its outgoing cables.
+				// is equal to the sum over the speed of its outgoing cables.
 				serverSpeedMap.put(s.getName(), serverSpeed);
 			}
 
@@ -122,7 +164,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 				// System.out.println(computerSpeed);
 				// In order to simplify things, we assume that the maximum
 				// computer speed (actually we are talking about throughput)
-				// is equals to the sum over the speed of its Incoming cables.
+				// is equal to the sum over the speed of its Incoming cables.
 				computerSpeedMap.put(computer.getName(), computerSpeed);
 			}
 
