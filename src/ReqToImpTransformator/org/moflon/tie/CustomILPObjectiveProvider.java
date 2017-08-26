@@ -29,16 +29,24 @@ public class CustomILPObjectiveProvider implements UserDefinedILPObjectiveProvid
 				Server s = (Server)match.getTargetMatch().getNodeMappings().get("implDevice");
 				weight = s.getMTBF().doubleValue();
 				
-			}else if(match.getRuleName().equals("ReqProviderToServerRule")){
+			}/*else if(match.getRuleName().equals("ImplToReqRule")){
 				Computer c = (Computer)match.getTargetMatch().getNodeMappings().get("implComputer");
 				Server s = (Server)match.getTargetMatch().getNodeMappings().get("implServer");
 				if(CustomILPConstraintProvider.paths.get(s).isGoalReachable(c)){
 					weight = -CustomILPConstraintProvider.paths.get(s).getDistanceToGoal(c);
 				}
 			
-			}
+			}*/
+			/*
 			else{
 				weight = (double) match.getCreatedHashSet().size();
+			}
+			*/
+			else if(match.getRuleName().equals("ReqConsumerToComputerRule")){
+				weight = 1.0;
+			}
+			else{
+				weight = 0.0;
 			}
 			idsToCoefficients.put(matchId, weight);
 			//System.out.println(idsToCoefficients);

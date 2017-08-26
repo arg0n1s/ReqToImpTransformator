@@ -1,6 +1,5 @@
 #import "platform:/plugin/mbse_metamodels/model/implementation.ecore"
 #import "platform:/plugin/mbse_metamodels/model/requirements.ecore"
-#import "platform:/plugin/VirtualMapping/model/VirtualMapping.ecore"
 
 #schema ReqToImpTransformator
 	
@@ -21,21 +20,6 @@
 	ReqAgentToImplDevice{
 		#src->requirements.Agent
 		#trg->implementation.Device
-	}
-	
-	VirtualNodeToRouter{
-		#src->NetworkSpan
-		#trg->Router
-	}
-	
-	VirtualNodeToComputer{
-		#src->NetworkSpan
-		#trg->Computer
-	}
-	
-	VirtualNodeToServer{
-		#src->NetworkSpan
-		#trg->Server
 	}
 }
 

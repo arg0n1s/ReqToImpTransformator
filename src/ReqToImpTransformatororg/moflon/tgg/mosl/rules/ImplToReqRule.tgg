@@ -5,9 +5,16 @@
 
 #source { 
 	reqConsumer : requirements.Consumer{
-		++ -Provider->reqProvider
+		++ -correspondingProvider->reqProvider
 	}
 	reqProvider : requirements.Provider
+	/*
+	reqContainer : requirements.Container{
+		-agents->reqConsumer
+		-agents->reqProvider
+	}
+	
+	*/
 }
 
 #target {
@@ -18,9 +25,9 @@
 	 	-outgoing->outCable
 	}
 	 
-	 inCable : implementation.Cable
+	inCable : implementation.Cable
 	 
-	 outCable : implementation.Cable
+	outCable : implementation.Cable
 	 
 	implContainer : implementation.Container {
 		-devices->implComputer
@@ -38,6 +45,12 @@
 		#src->reqProvider
 		#trg->implServer
 	}
+	/*
+	reqContainerToImplContainer : ReqContainerToImplContainer{
+		#src->reqContainer
+		#trg->implContainer
+	}
+	*/
 }
 
 #attributeConditions {
