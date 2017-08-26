@@ -8,7 +8,7 @@
   <devices xsi:type="impl:Server"
       outgoing="//@cables.1"
       incoming="//@cables.0"
-      name="s3"
+      name="s1"
       maxSlots="20"
       MTBF="20"/>
   <devices xsi:type="impl:Server"

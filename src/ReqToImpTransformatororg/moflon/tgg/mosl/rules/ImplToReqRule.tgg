@@ -1,0 +1,45 @@
+#using ReqToImpTransformator.*
+#using AttrCondDefLibrary.*
+
+#rule ImplToReqRule #with ReqToImpTransformator
+
+#source { 
+	reqConsumer : requirements.Consumer{
+		++ -Provider->reqProvider
+	}
+	reqProvider : requirements.Provider
+}
+
+#target {
+	implComputer : implementation.Computer {
+	 	-incoming->inCable
+	}
+	implServer : implementation.Server {
+	 	-outgoing->outCable
+	}
+	 
+	 inCable : implementation.Cable
+	 
+	 outCable : implementation.Cable
+	 
+	implContainer : implementation.Container {
+		-devices->implComputer
+		-devices->implServer
+	}
+	
+}
+
+#correspondence {
+	 reqAgentToImplDevice1 : ReqAgentToImplDevice {
+		#src->reqConsumer
+		#trg->implComputer
+	}
+	reqAgentToImplDevice2 : ReqAgentToImplDevice {
+		#src->reqProvider
+		#trg->implServer
+	}
+}
+
+#attributeConditions {
+	
+}

@@ -12,13 +12,20 @@
       name="p2"
       speed="3"/>
   <agents xsi:type="req:Consumer"
-      name="pc1"
-      speed="2"/>
+      name="Consumer 1"
+      speed="1"
+      Provider="//@agents.0"/>
   <agents xsi:type="req:Consumer"
-      name="pc2"
-      speed="2"/>
-  <agents xsi:type="req:Provider"
-      name="p3"
-      speed="3"/>
+      name="Consumer 2"
+      speed="1"
+      Provider="//@agents.1"/>
+  <agents xsi:type="req:Consumer"
+      name="Consumer 3"
+      speed="1"
+      Provider="//@agents.0"/>
+  <agents xsi:type="req:Consumer"
+      name="Consumer 4"
+      speed="1"
+      Provider="//@agents.1"/>
   <networkSpan/>
 </req:Container>
