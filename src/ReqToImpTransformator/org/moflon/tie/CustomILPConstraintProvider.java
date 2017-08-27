@@ -96,7 +96,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 
 	@Override
 	public Collection<UserDefinedILPConstraint> getUserDefinedConstraints(ConsistencyCheckPrecedenceGraph protocol) {
-		System.out.println("CSP");
+		//System.out.println("CSP");
 		// Hack begins here
 		initMappings();
 		// End Hack
@@ -104,7 +104,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		Map<CCMatch, Integer> computerMatchesMap = new HashMap<>();
 		Map<CCMatch, Integer> implementationRequirementMatchesMap = new HashMap<>();
 		for (CCMatch m : protocol.getMatches()) {
-			System.out.println(m.getRuleName());
+			//System.out.println(m.getRuleName());
 
 			if (m.getRuleName().equals("ReqProviderToServerRule")) {
 				serverMatchesMap.put(m, protocol.matchToInt(m));
@@ -133,9 +133,9 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 
 		Collection<UserDefinedILPConstraint> results = new ArrayList<>();
 
-		//results = maxSlotsConstraint(serverMatchesMap, results);
-		//results = serverSpeedConstraint(serverMatchesMap, results);
-		//results = computerSpeedConstraint(computerMatchesMap, results);
+		results = maxSlotsConstraint(serverMatchesMap, results);
+		results = serverSpeedConstraint(serverMatchesMap, results);
+		results = computerSpeedConstraint(computerMatchesMap, results);
 		results = consumerConnectedToProvider(implementationRequirementMatchesMap, results);
 
 		return results;
@@ -209,19 +209,20 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 					new HashMap<>());
 			double coefficient = 0.0;
 			if(paths.get(server).isGoalReachable(computer)){
-				coefficient = 1.0;
+				coefficient += 0.0;
+			}else{
+				coefficient -= 1.0;
 			}
-			System.out.println("Phys: "+computer.getName()+"&"+server.getName()+" to -> Virt: "+consumer.getName()+"&"+provider.getName()+" -> constraint: "+coefficient);
-			//System.out.println(coefficient);
 			coefficients.put(matchesMap.get(m), coefficient);
+			//System.out.println("Phys: "+computer.getName()+"&"+server.getName()+" to -> Virt: "+consumer.getName()+"&"+provider.getName()+" -> constraint: "+coefficient);
+			//coefficients.put(matchesMap.get(m), coefficient);
 
 			idToCoefficientMap.put(consumer.getName(), coefficients);
-			//System.out.println(idToCoefficientMap);
 		}
-		System.out.println(idToCoefficientMap);
+		//System.out.println(idToCoefficientMap);
 
 		for (String consumerName : idToCoefficientMap.keySet()) {
-			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(consumerName), "=", 1));
+			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(consumerName), ">=", 0));
 		}
 
 		return results;

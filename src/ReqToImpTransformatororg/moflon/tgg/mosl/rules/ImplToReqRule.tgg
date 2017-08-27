@@ -17,18 +17,8 @@
 }
 
 #target {
-	implComputer : implementation.Computer {
-	 	-incoming->inCable
-	}
-	implServer : implementation.Server {
-	 	-outgoing->outCable
-	 	-incoming->inCable2
-	} 
-	
-	inCable : implementation.Cable
-	inCable2 : implementation.Cable
-	 
-	outCable : implementation.Cable
+	implComputer : implementation.Computer
+	implServer : implementation.Server
 	
 	implContainer : implementation.Container {
 		-devices->implComputer
@@ -47,6 +37,7 @@
 		#src->reqProvider
 		#trg->implServer
 	}
+
 	reqContainerToImplContainer1 : ReqContainerToImplContainer{
 		#src->reqContainer
 		#trg->implContainer

@@ -18,29 +18,28 @@ import requirements.Provider;
 public class CustomILPObjectiveProvider implements UserDefinedILPObjectiveProvider {
 	
 	public UserDefinedILPObjective getUserDefinedObjective(ConsistencyCheckPrecedenceGraph protocol) {
-		System.out.println("Objective Function");
+		//System.out.println("Objective Function");
 		Map<Integer, Double> idsToCoefficients = new HashMap<>();
 		
 		for (int matchId : protocol.getMatchIDs().toArray()) {
 			CCMatch match = protocol.intToMatch(matchId);
-			Double weight = 0.0;
+			Double weight = 1.0;
 			
 			if(match.getRuleName().equals("ImplToReqRule")){
 				Computer c = (Computer)match.getTargetMatch().getNodeMappings().get("implComputer");
 				Server s = (Server)match.getTargetMatch().getNodeMappings().get("implServer");
 				if(CustomILPConstraintProvider.paths.get(s).isGoalReachable(c)){
-					weight = -CustomILPConstraintProvider.paths.get(s).getDistanceToGoal(c);
+					weight = 1.0 + s.getMTBF().doubleValue()/(1.0+CustomILPConstraintProvider.paths.get(s).getDistanceToGoal(c));
+					//weight += s.getMTBF().doubleValue();
+				}else{
+					weight = -1.0;
 				}
-				weight += s.getMTBF().doubleValue();
-			
-			}
-			else{
-				weight = 0.0;
+				
 			}
 			idsToCoefficients.put(matchId, weight);
 			//System.out.println(idsToCoefficients);
 		}
-		System.out.println(idsToCoefficients);
+		//System.out.println(idsToCoefficients);
 		return new UserDefinedILPObjective(idsToCoefficients, UserDefinedILPObjective.OptGoal.MAX);
 	}
 	

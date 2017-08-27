@@ -5,6 +5,8 @@
 
 #source { 
 	++ reqAgent : requirements.Consumer
+	
+	reqContainer : requirements.Container
 }
 
 #target {
@@ -15,15 +17,21 @@
 	 
 	 cable : implementation.Cable
 	 
+	 implContainer : implementation.Container
+	  
 }
 
 #correspondence {
-	/*
+	reqContainerToImplContainer : ReqContainerToImplContainer {
+		#src->reqContainer
+		#trg->implContainer
+	}
+	 /*
 	++ reqAgentToImplDevice : ReqAgentToImplDevice {
 		#src->reqAgent
 		#trg->implDevice
 	}
-	*/
+	 */
 }
 
 #attributeConditions {

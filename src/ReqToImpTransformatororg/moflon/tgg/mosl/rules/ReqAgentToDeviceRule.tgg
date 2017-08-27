@@ -23,7 +23,7 @@
 }
 
 #correspondence {
-	 reqContainerToImplContainer : ReqContainerToImplContainer {
+	reqContainerToImplContainer : ReqContainerToImplContainer {
 		#src->reqContainer
 		#trg->implContainer
 	}
@@ -31,8 +31,8 @@
  	++ reqAgentToImplDevice : ReqAgentToImplDevice {
 		#src->reqAgent
 		#trg->implDevice
-	}
- 	 */
+	} */
+ 	
 }
 
 #attributeConditions {
