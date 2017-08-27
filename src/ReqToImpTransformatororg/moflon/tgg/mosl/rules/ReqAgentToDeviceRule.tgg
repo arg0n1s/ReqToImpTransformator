@@ -19,6 +19,7 @@
  	implDevice : implementation.Device
  	
  	cable : implementation.Cable
+ 	
 }
 
 #correspondence {
@@ -26,12 +27,12 @@
 		#src->reqContainer
 		#trg->implContainer
 	}
-
+	/*
  	++ reqAgentToImplDevice : ReqAgentToImplDevice {
 		#src->reqAgent
 		#trg->implDevice
 	}
- 
+ 	 */
 }
 
 #attributeConditions {

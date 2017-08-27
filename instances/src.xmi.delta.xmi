@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="ASCII"?>
 <org.moflon.tgg.runtime:DeltaSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore" xmlns:req="platform:/plugin/mbse_metamodels/model/requirements.ecore">
   <targetModel href="cc_result/src.xmi#/"/>
-  <addedEdges name="correspondingProvider">
-    <src href="cc_result/src.xmi#//@agents.3"/>
-    <trg href="cc_result/src.xmi#//@agents.1"/>
-  </addedEdges>
-  <addedEdges name="correspondingProvider">
-    <src href="cc_result/src.xmi#//@agents.5"/>
-    <trg href="cc_result/src.xmi#//@agents.1"/>
-  </addedEdges>
-  <addedEdges name="correspondingProvider">
-    <src href="cc_result/src.xmi#//@agents.4"/>
-    <trg href="cc_result/src.xmi#//@agents.0"/>
-  </addedEdges>
-  <addedEdges trg="//@addedNodes.0" name="networkSpan">
+  <addedEdges trg="//@addedNodes.3" name="agents">
     <src href="cc_result/src.xmi#/"/>
   </addedEdges>
-  <addedEdges name="correspondingProvider">
-    <src href="cc_result/src.xmi#//@agents.2"/>
-    <trg href="cc_result/src.xmi#//@agents.0"/>
+  <addedEdges trg="//@addedNodes.0" name="agents">
+    <src href="cc_result/src.xmi#/"/>
   </addedEdges>
-  <addedNodes xsi:type="req:NetworkSpan"/>
+  <addedEdges trg="//@addedNodes.1" name="agents">
+    <src href="cc_result/src.xmi#/"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.5" name="agents">
+    <src href="cc_result/src.xmi#/"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.4" name="agents">
+    <src href="cc_result/src.xmi#/"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.2" name="agents">
+    <src href="cc_result/src.xmi#/"/>
+  </addedEdges>
+  <addedNodes xsi:type="req:Consumer" name="Consumer 11" speed="1" correspondingProvider="//@addedNodes.4"/>
+  <addedNodes xsi:type="req:Provider" name="p2" speed="3"/>
+  <addedNodes xsi:type="req:Consumer" name="Consumer 22" speed="1" correspondingProvider="//@addedNodes.1"/>
+  <addedNodes xsi:type="req:Consumer" name="Consumer 21" speed="1" correspondingProvider="//@addedNodes.1"/>
+  <addedNodes xsi:type="req:Provider" name="p1" speed="3"/>
+  <addedNodes xsi:type="req:Consumer" name="Consumer 12" speed="1" correspondingProvider="//@addedNodes.4"/>
 </org.moflon.tgg.runtime:DeltaSpecification>

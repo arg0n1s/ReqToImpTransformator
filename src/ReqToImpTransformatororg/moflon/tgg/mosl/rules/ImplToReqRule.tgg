@@ -4,17 +4,16 @@
 #rule ImplToReqRule #with ReqToImpTransformator
 
 #source { 
-	reqConsumer : requirements.Consumer{
+	 reqConsumer : requirements.Consumer{
 		++ -correspondingProvider->reqProvider
 	}
-	reqProvider : requirements.Provider
-	/*
-	reqContainer : requirements.Container{
-		-agents->reqConsumer
-		-agents->reqProvider
-	}
+	 reqProvider : requirements.Provider
 	
-	*/
+	 reqContainer : requirements.Container{
+		 -agents->reqConsumer
+		 -agents->reqProvider
+	}
+
 }
 
 #target {
@@ -23,12 +22,14 @@
 	}
 	implServer : implementation.Server {
 	 	-outgoing->outCable
-	}
-	 
+	 	-incoming->inCable2
+	} 
+	
 	inCable : implementation.Cable
+	inCable2 : implementation.Cable
 	 
 	outCable : implementation.Cable
-	 
+	
 	implContainer : implementation.Container {
 		-devices->implComputer
 		-devices->implServer
@@ -37,20 +38,20 @@
 }
 
 #correspondence {
-	 reqAgentToImplDevice1 : ReqAgentToImplDevice {
+	
+	++ reqAgentToImplDevice1 : ReqAgentToImplDevice {
 		#src->reqConsumer
 		#trg->implComputer
 	}
-	reqAgentToImplDevice2 : ReqAgentToImplDevice {
+	++ reqAgentToImplDevice2 : ReqAgentToImplDevice {
 		#src->reqProvider
 		#trg->implServer
 	}
-	/*
-	reqContainerToImplContainer : ReqContainerToImplContainer{
+	reqContainerToImplContainer1 : ReqContainerToImplContainer{
 		#src->reqContainer
 		#trg->implContainer
 	}
-	*/
+	
 }
 
 #attributeConditions {

@@ -103,7 +103,6 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		Map<CCMatch, Integer> serverMatchesMap = new HashMap<>();
 		Map<CCMatch, Integer> computerMatchesMap = new HashMap<>();
 		Map<CCMatch, Integer> implementationRequirementMatchesMap = new HashMap<>();
-		Map<CCMatch, Integer> initRouterMatchesMap = new HashMap<>();
 		for (CCMatch m : protocol.getMatches()) {
 			System.out.println(m.getRuleName());
 
@@ -111,8 +110,6 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 				serverMatchesMap.put(m, protocol.matchToInt(m));
 			} else if (m.getRuleName().equals("ReqConsumerToComputerRule")) {
 				computerMatchesMap.put(m, protocol.matchToInt(m));
-			} else if (m.getRuleName().equals("VirtualNodeToRouterRule1")){
-				initRouterMatchesMap.put(m, protocol.matchToInt(m));
 			} else if (m.getRuleName().equals("ImplToReqRule")){
 				implementationRequirementMatchesMap.put(m, protocol.matchToInt(m));
 			}
@@ -139,7 +136,6 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		//results = maxSlotsConstraint(serverMatchesMap, results);
 		//results = serverSpeedConstraint(serverMatchesMap, results);
 		//results = computerSpeedConstraint(computerMatchesMap, results);
-		//results = initRouterConstraint(initRouterMatchesMap, results);
 		results = consumerConnectedToProvider(implementationRequirementMatchesMap, results);
 
 		return results;
@@ -226,26 +222,6 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 
 		for (String consumerName : idToCoefficientMap.keySet()) {
 			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(consumerName), "=", 1));
-		}
-
-		return results;
-	}
-
-	private Collection<UserDefinedILPConstraint> initRouterConstraint(Map<CCMatch, Integer> matchesMap,
-			Collection<UserDefinedILPConstraint> results) {
-
-		Map<Router, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
-
-		for (CCMatch m : matchesMap.keySet()) {
-			Router r = (Router) m.getTargetMatch().getNodeMappings().get("router");
-			HashMap<Integer, Double> coefficients = idToCoefficientMap.getOrDefault(r, new HashMap<>());
-			coefficients.put(matchesMap.get(m), 1.0);
-
-			idToCoefficientMap.put(r, coefficients);
-		}
-
-		for (Router r : idToCoefficientMap.keySet()) {
-			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(r), "=", 1));
 		}
 
 		return results;

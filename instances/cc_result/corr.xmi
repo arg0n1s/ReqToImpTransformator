@@ -5,28 +5,36 @@
     <target href="trg.xmi#/"/>
   </correspondences>
   <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.1"/>
-    <target href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
+    <source href="../src.xmi.delta.xmi#//@addedNodes.0"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
   </correspondences>
   <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.5"/>
-    <target href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
+    <source href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
   </correspondences>
   <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.2"/>
-    <target href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
+    <source href="../src.xmi.delta.xmi#//@addedNodes.5"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
   </correspondences>
   <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.4"/>
-    <target href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
+    <source href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
   </correspondences>
   <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.0"/>
-    <target href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
+    <source href="../src.xmi.delta.xmi#//@addedNodes.3"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
   </correspondences>
   <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.3"/>
-    <target href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
+    <source href="../src.xmi.delta.xmi#//@addedNodes.1"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
+    <source href="../src.xmi.delta.xmi#//@addedNodes.2"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
+    <source href="../src.xmi.delta.xmi#//@addedNodes.1"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
   </correspondences>
   <source href="src.xmi#/"/>
   <target href="trg.xmi#/"/>

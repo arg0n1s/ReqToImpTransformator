@@ -1,319 +1,397 @@
 <?xml version="1.0" encoding="ASCII"?>
 <org.moflon.tgg.runtime:PrecedenceStructure xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
-  <tripleMatches ruleName="ReqConsumerToComputerRule">
-    <sourceElements href="src.xmi#/"/>
+  <tripleMatches ruleName="ImplToReqRule">
     <sourceElements href="#//@tripleMatches.0/@containedEdges.0"/>
-    <sourceElements href="src.xmi#//@agents.2"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.0"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.1"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.2"/>
+    <sourceElements href="../src.xmi.delta.xmi#//@addedNodes.1"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.7"/>
+    <sourceElements href="../src.xmi.delta.xmi#//@addedNodes.3"/>
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.0/@containedEdges.10"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.2"/>
     <contextElements href="src.xmi#/"/>
-    <contextElements href="trg.xmi#/"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.4"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.5"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.6"/>
+    <contextElements href="../src.xmi.delta.xmi#//@addedNodes.1"/>
     <contextElements href="corr.xmi#//@correspondences.0"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.3"/>
-    <nodeMappings nodeName="reqAgent">
-      <node href="src.xmi#//@agents.2"/>
-    </nodeMappings>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.7"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.8"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    <contextElements href="../src.xmi.delta.xmi#//@addedNodes.3"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    <contextElements href="trg.xmi#/"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.9"/>
     <nodeMappings nodeName="reqContainer">
       <node href="src.xmi#/"/>
     </nodeMappings>
-    <nodeMappings nodeName="implDevice">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
+    <nodeMappings nodeName="reqProvider">
+      <node href="../src.xmi.delta.xmi#//@addedNodes.1"/>
     </nodeMappings>
-    <nodeMappings nodeName="cable">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
+    <nodeMappings nodeName="reqConsumer">
+      <node href="../src.xmi.delta.xmi#//@addedNodes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="outCable">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    </nodeMappings>
+    <nodeMappings nodeName="inCable2">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    </nodeMappings>
+    <nodeMappings nodeName="inCable">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implComputer">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implServer">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
     </nodeMappings>
     <nodeMappings nodeName="implContainer">
       <node href="trg.xmi#/"/>
     </nodeMappings>
     <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
       <src href="src.xmi#/"/>
-      <trg href="src.xmi#//@agents.2"/>
-    </containedEdges>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.0"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.1"/>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.2"/>
-    <targetElements href="trg.xmi#/"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.3"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.3"/>
-    <createdElements href="#//@tripleMatches.0/@containedEdges.0"/>
-    <createdElements href="src.xmi#//@agents.2"/>
-    <createdElements href="corr.xmi#//@correspondences.3"/>
-  </tripleMatches>
-  <tripleMatches ruleName="ReqConsumerToComputerRule">
-    <sourceElements href="src.xmi#/"/>
-    <sourceElements href="#//@tripleMatches.1/@containedEdges.4"/>
-    <sourceElements href="src.xmi#//@agents.3"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.0"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.1"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.2"/>
-    <contextElements href="src.xmi#/"/>
-    <contextElements href="trg.xmi#/"/>
-    <contextElements href="corr.xmi#//@correspondences.0"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.3"/>
-    <nodeMappings nodeName="reqAgent">
-      <node href="src.xmi#//@agents.3"/>
-    </nodeMappings>
-    <nodeMappings nodeName="reqContainer">
-      <node href="src.xmi#/"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implDevice">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    </nodeMappings>
-    <nodeMappings nodeName="cable">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implContainer">
-      <node href="trg.xmi#/"/>
-    </nodeMappings>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="incoming">
-      <src href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-      <trg href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    </containedEdges>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="devices">
-      <src href="trg.xmi#/"/>
-      <trg href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.3"/>
     </containedEdges>
     <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
-      <src href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-      <trg href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
+      <src href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+      <trg href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
     </containedEdges>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="cables">
-      <src href="trg.xmi#/"/>
-      <trg href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="outgoing">
+      <src href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+      <trg href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
     </containedEdges>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
-      <src href="src.xmi#/"/>
-      <trg href="src.xmi#//@agents.3"/>
-    </containedEdges>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.0"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.1"/>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.2"/>
-    <targetElements href="trg.xmi#/"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.3"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.6"/>
-    <createdElements href="corr.xmi#//@correspondences.6"/>
-    <createdElements href="#//@tripleMatches.1/@containedEdges.4"/>
-    <createdElements href="src.xmi#//@agents.3"/>
-  </tripleMatches>
-  <tripleMatches ruleName="ReqConsumerToComputerRule">
-    <sourceElements href="src.xmi#/"/>
-    <sourceElements href="#//@tripleMatches.2/@containedEdges.0"/>
-    <sourceElements href="src.xmi#//@agents.4"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.0"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.1"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.2"/>
-    <contextElements href="src.xmi#/"/>
-    <contextElements href="trg.xmi#/"/>
-    <contextElements href="corr.xmi#//@correspondences.0"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.3"/>
-    <nodeMappings nodeName="reqAgent">
-      <node href="src.xmi#//@agents.4"/>
-    </nodeMappings>
-    <nodeMappings nodeName="reqContainer">
-      <node href="src.xmi#/"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implDevice">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    </nodeMappings>
-    <nodeMappings nodeName="cable">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implContainer">
-      <node href="trg.xmi#/"/>
-    </nodeMappings>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
-      <src href="src.xmi#/"/>
-      <trg href="src.xmi#//@agents.4"/>
-    </containedEdges>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.0"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.1"/>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.2"/>
-    <targetElements href="trg.xmi#/"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.3"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.4"/>
-    <createdElements href="corr.xmi#//@correspondences.4"/>
-    <createdElements href="#//@tripleMatches.2/@containedEdges.0"/>
-    <createdElements href="src.xmi#//@agents.4"/>
-  </tripleMatches>
-  <tripleMatches ruleName="ReqProviderToServerRule">
-    <sourceElements href="src.xmi#/"/>
-    <sourceElements href="#//@tripleMatches.3/@containedEdges.0"/>
-    <sourceElements href="src.xmi#//@agents.1"/>
-    <contextElements href="#//@tripleMatches.6/@containedEdges.0"/>
-    <contextElements href="#//@tripleMatches.6/@containedEdges.1"/>
-    <contextElements href="src.xmi#/"/>
-    <contextElements href="trg.xmi#/"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.5"/>
-    <contextElements href="#//@tripleMatches.6/@containedEdges.2"/>
-    <contextElements href="corr.xmi#//@correspondences.0"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
-    <contextElements href="#//@tripleMatches.6/@containedEdges.3"/>
-    <nodeMappings nodeName="reqAgent">
-      <node href="src.xmi#//@agents.1"/>
-    </nodeMappings>
-    <nodeMappings nodeName="reqContainer">
-      <node href="src.xmi#/"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implDevice">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
-    </nodeMappings>
-    <nodeMappings nodeName="cable">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.5"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implContainer">
-      <node href="trg.xmi#/"/>
-    </nodeMappings>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
-      <src href="src.xmi#/"/>
-      <trg href="src.xmi#//@agents.1"/>
-    </containedEdges>
-    <targetElements href="#//@tripleMatches.6/@containedEdges.0"/>
-    <targetElements href="#//@tripleMatches.6/@containedEdges.1"/>
-    <targetElements href="trg.xmi#/"/>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.5"/>
-    <targetElements href="#//@tripleMatches.6/@containedEdges.2"/>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
-    <targetElements href="#//@tripleMatches.6/@containedEdges.3"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
-    <createdElements href="#//@tripleMatches.3/@containedEdges.0"/>
-    <createdElements href="src.xmi#//@agents.1"/>
-    <createdElements href="corr.xmi#//@correspondences.1"/>
-  </tripleMatches>
-  <tripleMatches children="//@tripleMatches.2 //@tripleMatches.0 //@tripleMatches.5 //@tripleMatches.3 //@tripleMatches.1 //@tripleMatches.6" ruleName="ReqContainerToImplContainerRule">
-    <sourceElements href="src.xmi#/"/>
-    <nodeMappings nodeName="reqContainer">
-      <node href="src.xmi#/"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implContainer">
-      <node href="trg.xmi#/"/>
-    </nodeMappings>
-    <targetElements href="trg.xmi#/"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
-    <createdElements href="src.xmi#/"/>
-    <createdElements href="trg.xmi#/"/>
-    <createdElements href="corr.xmi#//@correspondences.0"/>
-  </tripleMatches>
-  <tripleMatches ruleName="ReqConsumerToComputerRule">
-    <sourceElements href="src.xmi#/"/>
-    <sourceElements href="#//@tripleMatches.5/@containedEdges.0"/>
-    <sourceElements href="src.xmi#//@agents.5"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.0"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.1"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.2"/>
-    <contextElements href="src.xmi#/"/>
-    <contextElements href="trg.xmi#/"/>
-    <contextElements href="corr.xmi#//@correspondences.0"/>
-    <contextElements href="#//@tripleMatches.1/@containedEdges.3"/>
-    <nodeMappings nodeName="reqAgent">
-      <node href="src.xmi#//@agents.5"/>
-    </nodeMappings>
-    <nodeMappings nodeName="reqContainer">
-      <node href="src.xmi#/"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implDevice">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    </nodeMappings>
-    <nodeMappings nodeName="cable">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implContainer">
-      <node href="trg.xmi#/"/>
-    </nodeMappings>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
-      <src href="src.xmi#/"/>
-      <trg href="src.xmi#//@agents.5"/>
-    </containedEdges>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.0"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.1"/>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.4"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.2"/>
-    <targetElements href="trg.xmi#/"/>
-    <targetElements href="#//@tripleMatches.1/@containedEdges.3"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
-    <correspondenceElements href="corr.xmi#//@correspondences.2"/>
-    <createdElements href="#//@tripleMatches.5/@containedEdges.0"/>
-    <createdElements href="corr.xmi#//@correspondences.2"/>
-    <createdElements href="src.xmi#//@agents.5"/>
-  </tripleMatches>
-  <tripleMatches ruleName="ReqProviderToServerRule">
-    <sourceElements href="src.xmi#/"/>
-    <sourceElements href="#//@tripleMatches.6/@containedEdges.4"/>
-    <sourceElements href="src.xmi#//@agents.0"/>
-    <contextElements href="#//@tripleMatches.6/@containedEdges.0"/>
-    <contextElements href="#//@tripleMatches.6/@containedEdges.1"/>
-    <contextElements href="src.xmi#/"/>
-    <contextElements href="trg.xmi#/"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.5"/>
-    <contextElements href="#//@tripleMatches.6/@containedEdges.2"/>
-    <contextElements href="corr.xmi#//@correspondences.0"/>
-    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
-    <contextElements href="#//@tripleMatches.6/@containedEdges.3"/>
-    <nodeMappings nodeName="reqAgent">
-      <node href="src.xmi#//@agents.0"/>
-    </nodeMappings>
-    <nodeMappings nodeName="reqContainer">
-      <node href="src.xmi#/"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implDevice">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
-    </nodeMappings>
-    <nodeMappings nodeName="cable">
-      <node href="../trg.xmi.delta.xmi#//@addedNodes.5"/>
-    </nodeMappings>
-    <nodeMappings nodeName="implContainer">
-      <node href="trg.xmi#/"/>
-    </nodeMappings>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="cables">
-      <src href="trg.xmi#/"/>
-      <trg href="../trg.xmi.delta.xmi#//@addedNodes.5"/>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="target">
+      <src href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+      <trg href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
     </containedEdges>
     <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="devices">
       <src href="trg.xmi#/"/>
-      <trg href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
+      <trg href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
     </containedEdges>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
-      <src href="../trg.xmi.delta.xmi#//@addedNodes.5"/>
-      <trg href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="devices">
+      <src href="trg.xmi#/"/>
+      <trg href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
     </containedEdges>
-    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="outgoing">
-      <src href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
-      <trg href="../trg.xmi.delta.xmi#//@addedNodes.5"/>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="incoming">
+      <src href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+      <trg href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
     </containedEdges>
     <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
       <src href="src.xmi#/"/>
-      <trg href="src.xmi#//@agents.0"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.1"/>
     </containedEdges>
-    <targetElements href="#//@tripleMatches.6/@containedEdges.0"/>
-    <targetElements href="#//@tripleMatches.6/@containedEdges.1"/>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="source">
+      <src href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+      <trg href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="incoming">
+      <src href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+      <trg href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="correspondingProvider">
+      <src href="../src.xmi.delta.xmi#//@addedNodes.3"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.1"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.5"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.8"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
     <targetElements href="trg.xmi#/"/>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.5"/>
-    <targetElements href="#//@tripleMatches.6/@containedEdges.2"/>
-    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.10"/>
-    <targetElements href="#//@tripleMatches.6/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.9"/>
     <correspondenceElements href="corr.xmi#//@correspondences.0"/>
     <correspondenceElements href="corr.xmi#//@correspondences.5"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.6"/>
+    <createdElements href="#//@tripleMatches.0/@containedEdges.10"/>
     <createdElements href="corr.xmi#//@correspondences.5"/>
-    <createdElements href="#//@tripleMatches.6/@containedEdges.4"/>
-    <createdElements href="src.xmi#//@agents.0"/>
+    <createdElements href="corr.xmi#//@correspondences.6"/>
+  </tripleMatches>
+  <tripleMatches ruleName="ImplToReqRule">
+    <sourceElements href="../src.xmi.delta.xmi#//@addedNodes.1"/>
+    <sourceElements href="../src.xmi.delta.xmi#//@addedNodes.2"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.1/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.4"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.5"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.6"/>
+    <contextElements href="../src.xmi.delta.xmi#//@addedNodes.1"/>
+    <contextElements href="corr.xmi#//@correspondences.0"/>
+    <contextElements href="../src.xmi.delta.xmi#//@addedNodes.2"/>
+    <contextElements href="#//@tripleMatches.1/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.8"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    <contextElements href="trg.xmi#/"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.9"/>
+    <contextElements href="#//@tripleMatches.1/@containedEdges.1"/>
+    <nodeMappings nodeName="reqContainer">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="reqProvider">
+      <node href="../src.xmi.delta.xmi#//@addedNodes.1"/>
+    </nodeMappings>
+    <nodeMappings nodeName="reqConsumer">
+      <node href="../src.xmi.delta.xmi#//@addedNodes.2"/>
+    </nodeMappings>
+    <nodeMappings nodeName="outCable">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    </nodeMappings>
+    <nodeMappings nodeName="inCable2">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    </nodeMappings>
+    <nodeMappings nodeName="inCable">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implComputer">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implServer">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implContainer">
+      <node href="trg.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
+      <src href="src.xmi#/"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.1"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
+      <src href="src.xmi#/"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.2"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="correspondingProvider">
+      <src href="../src.xmi.delta.xmi#//@addedNodes.2"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.1"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.5"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.8"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    <targetElements href="trg.xmi#/"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.9"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.7"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.8"/>
+    <createdElements href="#//@tripleMatches.1/@containedEdges.2"/>
+    <createdElements href="corr.xmi#//@correspondences.8"/>
+    <createdElements href="corr.xmi#//@correspondences.7"/>
+  </tripleMatches>
+  <tripleMatches children="//@tripleMatches.3 //@tripleMatches.1 //@tripleMatches.4 //@tripleMatches.0" ruleName="ReqContainerToImplContainerRule">
+    <sourceElements href="src.xmi#/"/>
+    <nodeMappings nodeName="reqContainer">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implContainer">
+      <node href="trg.xmi#/"/>
+    </nodeMappings>
+    <targetElements href="trg.xmi#/"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
+    <createdElements href="corr.xmi#//@correspondences.0"/>
+    <createdElements href="trg.xmi#/"/>
+    <createdElements href="src.xmi#/"/>
+  </tripleMatches>
+  <tripleMatches ruleName="ImplToReqRule">
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <sourceElements href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="../src.xmi.delta.xmi#//@addedNodes.5"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.3/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.0"/>
+    <contextElements href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="../src.xmi.delta.xmi#//@addedNodes.5"/>
+    <contextElements href="#//@tripleMatches.3/@containedEdges.1"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.4"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.5"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.6"/>
+    <contextElements href="corr.xmi#//@correspondences.0"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.8"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    <contextElements href="trg.xmi#/"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.9"/>
+    <nodeMappings nodeName="reqContainer">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="reqProvider">
+      <node href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="reqConsumer">
+      <node href="../src.xmi.delta.xmi#//@addedNodes.5"/>
+    </nodeMappings>
+    <nodeMappings nodeName="outCable">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    </nodeMappings>
+    <nodeMappings nodeName="inCable2">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    </nodeMappings>
+    <nodeMappings nodeName="inCable">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implComputer">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implServer">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implContainer">
+      <node href="trg.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
+      <src href="src.xmi#/"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.5"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
+      <src href="src.xmi#/"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="correspondingProvider">
+      <src href="../src.xmi.delta.xmi#//@addedNodes.5"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.5"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.8"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    <targetElements href="trg.xmi#/"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.9"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.3"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.4"/>
+    <createdElements href="corr.xmi#//@correspondences.3"/>
+    <createdElements href="corr.xmi#//@correspondences.4"/>
+    <createdElements href="#//@tripleMatches.3/@containedEdges.2"/>
+  </tripleMatches>
+  <tripleMatches ruleName="ImplToReqRule">
+    <sourceElements href="../src.xmi.delta.xmi#//@addedNodes.0"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <sourceElements href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    <sourceElements href="src.xmi#/"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <sourceElements href="#//@tripleMatches.4/@containedEdges.2"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <contextElements href="../src.xmi.delta.xmi#//@addedNodes.0"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    <contextElements href="#//@tripleMatches.4/@containedEdges.0"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <contextElements href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    <contextElements href="src.xmi#/"/>
+    <contextElements href="#//@tripleMatches.4/@containedEdges.1"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.4"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.5"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.6"/>
+    <contextElements href="corr.xmi#//@correspondences.0"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.8"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    <contextElements href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    <contextElements href="trg.xmi#/"/>
+    <contextElements href="#//@tripleMatches.0/@containedEdges.9"/>
+    <nodeMappings nodeName="reqContainer">
+      <node href="src.xmi#/"/>
+    </nodeMappings>
+    <nodeMappings nodeName="reqProvider">
+      <node href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    </nodeMappings>
+    <nodeMappings nodeName="reqConsumer">
+      <node href="../src.xmi.delta.xmi#//@addedNodes.0"/>
+    </nodeMappings>
+    <nodeMappings nodeName="outCable">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    </nodeMappings>
+    <nodeMappings nodeName="inCable2">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    </nodeMappings>
+    <nodeMappings nodeName="inCable">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implComputer">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implServer">
+      <node href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    </nodeMappings>
+    <nodeMappings nodeName="implContainer">
+      <node href="trg.xmi#/"/>
+    </nodeMappings>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
+      <src href="src.xmi#/"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.0"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="agents">
+      <src href="src.xmi#/"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    </containedEdges>
+    <containedEdges xsi:type="org.moflon.tgg.runtime:EMoflonEdge" name="correspondingProvider">
+      <src href="../src.xmi.delta.xmi#//@addedNodes.0"/>
+      <trg href="../src.xmi.delta.xmi#//@addedNodes.4"/>
+    </containedEdges>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.1"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.6"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.2"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.7"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.3"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.4"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.5"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.11"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.6"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.8"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.3"/>
+    <targetElements href="../trg.xmi.delta.xmi#//@addedNodes.13"/>
+    <targetElements href="trg.xmi#/"/>
+    <targetElements href="#//@tripleMatches.0/@containedEdges.9"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.0"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.1"/>
+    <correspondenceElements href="corr.xmi#//@correspondences.2"/>
+    <createdElements href="#//@tripleMatches.4/@containedEdges.2"/>
+    <createdElements href="corr.xmi#//@correspondences.1"/>
+    <createdElements href="corr.xmi#//@correspondences.2"/>
   </tripleMatches>
 </org.moflon.tgg.runtime:PrecedenceStructure>

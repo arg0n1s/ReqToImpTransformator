@@ -8,18 +8,22 @@
 }
 
 #target {
+	
 	 implDevice : implementation.Server {
 	 	-outgoing->cable
 	 }
-	 
+	  
 	 cable : implementation.Cable
+	 
 }
 
 #correspondence {
+	/*
 	++ reqAgentToImplDevice : ReqAgentToImplDevice {
 		#src->reqAgent
 		#trg->implDevice
 	}
+	*/
 }
 
 #attributeConditions {
