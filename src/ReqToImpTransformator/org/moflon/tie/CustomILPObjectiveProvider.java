@@ -30,16 +30,16 @@ public class CustomILPObjectiveProvider implements UserDefinedILPObjectiveProvid
 				Server s = (Server)match.getTargetMatch().getNodeMappings().get("implServer");
 				if(CustomILPConstraintProvider.paths.get(s).isGoalReachable(c)){
 					weight = 1.0 + s.getMTBF().doubleValue()/(1.0+CustomILPConstraintProvider.paths.get(s).getDistanceToGoal(c));
-					//weight += s.getMTBF().doubleValue();
 				}else{
-					weight = -1.0;
+					weight = 0.0;
 				}
+				
 				
 			}
 			idsToCoefficients.put(matchId, weight);
 			//System.out.println(idsToCoefficients);
 		}
-		//System.out.println(idsToCoefficients);
+		System.out.println(idsToCoefficients);
 		return new UserDefinedILPObjective(idsToCoefficients, UserDefinedILPObjective.OptGoal.MAX);
 	}
 	

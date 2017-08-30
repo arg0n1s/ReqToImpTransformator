@@ -1,7 +1,7 @@
 #using ReqToImpTransformator.*
 #using AttrCondDefLibrary.*
 
-#rule ReqConsumerToComputerRule #extends ReqAgentToDeviceRule #with ReqToImpTransformator
+#abstract #rule ReqConsumerToComputerRule #extends ReqAgentToDeviceRule #with ReqToImpTransformator
 
 #source { 
 	++ reqAgent : requirements.Consumer

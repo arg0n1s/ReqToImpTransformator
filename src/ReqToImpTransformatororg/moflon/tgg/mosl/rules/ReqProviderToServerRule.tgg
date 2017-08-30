@@ -1,7 +1,7 @@
 #using ReqToImpTransformator.*
 #using AttrCondDefLibrary.*
 
-#rule ReqProviderToServerRule #extends ReqAgentToDeviceRule #with ReqToImpTransformator
+#abstract #rule ReqProviderToServerRule #extends ReqAgentToDeviceRule #with ReqToImpTransformator
 
 #source { 
 	++ reqAgent : requirements.Provider

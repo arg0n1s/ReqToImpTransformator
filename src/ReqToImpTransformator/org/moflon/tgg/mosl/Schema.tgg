@@ -17,9 +17,14 @@
 		#trg->implementation.Container
 	}
 	
-	ReqAgentToImplDevice{
-		#src->requirements.Agent
-		#trg->implementation.Device
+	ReqConsumerToImplComputer{
+		#src->requirements.Consumer
+		#trg->implementation.Computer
+	}
+	
+	ReqProviderToImplServer{
+		#src->requirements.Provider
+		#trg->implementation.Server
 	}
 }
 

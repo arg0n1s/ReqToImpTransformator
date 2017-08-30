@@ -15,7 +15,6 @@ import org.moflon.tgg.runtime.CCMatch;
 import implementation.Cable;
 import implementation.Computer;
 import implementation.Container;
-import implementation.Router;
 import implementation.Server;
 import requirements.Consumer;
 import requirements.Provider;
@@ -30,7 +29,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 	public static HashMap<EObject, LinkedList<EObject>> computerToConsumerMapping;
 	public static HashMap<EObject, FindShortestPath> paths;
 	
-	// An elegant way to say: screw pattern matching we're going to do this our way.
+	// extracting vertices and edges from found matches
 	private static void initHack(Container c){
 		computers = new LinkedList<EObject>();
 		servers = new LinkedList<EObject>();
@@ -51,39 +50,6 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 			}
 		}
 	}
-	// .. what the signature says
-	private static void initMappings(){
-		serverToProviderMapping = new HashMap<EObject, LinkedList<EObject>>();
-		computerToConsumerMapping = new HashMap<EObject, LinkedList<EObject>>();
-	}
-	// .. add found provider to server mappings
-	private static void addServerMapping(EObject server, EObject provider){
-		if(provider == null){
-			return;
-		}
-		LinkedList<EObject> ll;
-		if(!serverToProviderMapping.containsKey(server)){
-			ll = new LinkedList<EObject>();
-		}else{
-			ll = serverToProviderMapping.get(server);
-		}
-		ll.add(provider);
-		serverToProviderMapping.put(server, ll);
-	}
-	// .. add found consumer to computer mappings
-	private static void addComputerMapping(EObject computer, EObject consumer){
-		if(consumer == null){
-			return;
-		}
-		LinkedList<EObject> ll;
-		if(!computerToConsumerMapping.containsKey(computer)){
-			ll = new LinkedList<EObject>();
-		}else{
-			ll = computerToConsumerMapping.get(computer);
-		}
-		ll.add(consumer);
-		computerToConsumerMapping.put(computer, ll);
-	}
 	// Brute force, best force ..
 	private static void findAllRoutes(){
 		paths = new HashMap<EObject, FindShortestPath>();
@@ -97,34 +63,16 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 	@Override
 	public Collection<UserDefinedILPConstraint> getUserDefinedConstraints(ConsistencyCheckPrecedenceGraph protocol) {
 		//System.out.println("CSP");
-		// Hack begins here
-		initMappings();
-		// End Hack
-		Map<CCMatch, Integer> serverMatchesMap = new HashMap<>();
-		Map<CCMatch, Integer> computerMatchesMap = new HashMap<>();
 		Map<CCMatch, Integer> implementationRequirementMatchesMap = new HashMap<>();
 		for (CCMatch m : protocol.getMatches()) {
-			//System.out.println(m.getRuleName());
-
-			if (m.getRuleName().equals("ReqProviderToServerRule")) {
-				serverMatchesMap.put(m, protocol.matchToInt(m));
-			} else if (m.getRuleName().equals("ReqConsumerToComputerRule")) {
-				computerMatchesMap.put(m, protocol.matchToInt(m));
-			} else if (m.getRuleName().equals("ImplToReqRule")){
+			System.out.println(m.getRuleName());
+			if (m.getRuleName().equals("ImplToReqRule")){
 				implementationRequirementMatchesMap.put(m, protocol.matchToInt(m));
 			}
 			// Hack continues here
 			if(m.getRuleName().equals("ReqContainerToImplContainerRule")){
 				initHack((Container)m.getTargetMatch().getNodeMappings().get("implContainer"));
 			}
-			
-			if(m.getRuleName().equals("ReqConsumerToComputerRule")){
-				addComputerMapping(m.getTargetMatch().getNodeMappings().get("implDevice"), m.getSourceMatch().getNodeMappings().get("reqAgent"));
-			}
-			if (m.getRuleName().equals("ReqProviderToServerRule")) {
-				addServerMapping(m.getTargetMatch().getNodeMappings().get("implDevice"), m.getSourceMatch().getNodeMappings().get("reqAgent"));
-			}
-			
 			// End Hack
 		}
 		// Hack continues here
@@ -133,9 +81,9 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 
 		Collection<UserDefinedILPConstraint> results = new ArrayList<>();
 
-		results = maxSlotsConstraint(serverMatchesMap, results);
-		results = serverSpeedConstraint(serverMatchesMap, results);
-		results = computerSpeedConstraint(computerMatchesMap, results);
+		//results = maxSlotsConstraint(implementationRequirementMatchesMap, results);
+		//results = serverSpeedConstraint(implementationRequirementMatchesMap, results);
+		//results = computerSpeedConstraint(implementationRequirementMatchesMap, results);
 		results = consumerConnectedToProvider(implementationRequirementMatchesMap, results);
 
 		return results;
@@ -147,7 +95,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		Map<Server, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
 
 		for (CCMatch m : matchesMap.keySet()) {
-			Server s = (Server) m.getTargetMatch().getNodeMappings().get("implDevice");
+			Server s = (Server) m.getTargetMatch().getNodeMappings().get("implServer");
 
 			HashMap<Integer, Double> coefficients = idToCoefficientMap.getOrDefault(s, new HashMap<>());
 			coefficients.put(matchesMap.get(m), 1.0);
@@ -168,8 +116,8 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		Map<String, Double> serverSpeedMap = new HashMap<>();
 
 		for (CCMatch m : matchesMap.keySet()) {
-			Server s = (Server) m.getTargetMatch().getNodeMappings().get("implDevice");
-			Provider p = (Provider) m.getSourceMatch().getNodeMappings().get("reqAgent");
+			Server s = (Server) m.getTargetMatch().getNodeMappings().get("implServer");
+			Provider p = (Provider) m.getSourceMatch().getNodeMappings().get("reqProvider");
 			if (!serverSpeedMap.containsKey(s.getName())) {
 				double serverSpeed = 0.0;
 				for (Cable c : s.getOutgoing()) {
@@ -197,7 +145,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 	private Collection<UserDefinedILPConstraint> consumerConnectedToProvider(Map<CCMatch, Integer> matchesMap,
 			Collection<UserDefinedILPConstraint> results) {
 
-		Map<String, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
+		Map<CCMatch, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
 
 		for (CCMatch m : matchesMap.keySet()) {
 			Computer computer = (Computer) m.getTargetMatch().getNodeMappings().get("implComputer");
@@ -208,21 +156,19 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 			HashMap<Integer, Double> coefficients = idToCoefficientMap.getOrDefault(consumer.getName(),
 					new HashMap<>());
 			double coefficient = 0.0;
-			if(paths.get(server).isGoalReachable(computer)){
-				coefficient += 0.0;
-			}else{
-				coefficient -= 1.0;
+			if(!paths.get(server).isGoalReachable(computer)){
+				coefficient += 1.0;
 			}
 			coefficients.put(matchesMap.get(m), coefficient);
-			//System.out.println("Phys: "+computer.getName()+"&"+server.getName()+" to -> Virt: "+consumer.getName()+"&"+provider.getName()+" -> constraint: "+coefficient);
+			System.out.println("Phys: "+computer.getName()+"&"+server.getName()+" to -> Virt: "+consumer.getName()+"&"+provider.getName()+" -> constraint: "+coefficient);
 			//coefficients.put(matchesMap.get(m), coefficient);
 
-			idToCoefficientMap.put(consumer.getName(), coefficients);
+			idToCoefficientMap.put(m, coefficients);
 		}
 		//System.out.println(idToCoefficientMap);
 
-		for (String consumerName : idToCoefficientMap.keySet()) {
-			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(consumerName), ">=", 0));
+		for (CCMatch consumerName : idToCoefficientMap.keySet()) {
+			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(consumerName), "=", 0));
 		}
 
 		return results;
@@ -235,8 +181,8 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 		Map<String, Double> computerSpeedMap = new HashMap<>();
 
 		for (CCMatch m : matchesMap.keySet()) {
-			Computer computer = (Computer) m.getTargetMatch().getNodeMappings().get("implDevice");
-			Consumer consumer = (Consumer) m.getSourceMatch().getNodeMappings().get("reqAgent");
+			Computer computer = (Computer) m.getTargetMatch().getNodeMappings().get("implComputer");
+			Consumer consumer = (Consumer) m.getSourceMatch().getNodeMappings().get("reqConsumer");
 
 			if (!computerSpeedMap.containsKey(computer.getName())) {
 				double computerSpeed = 0.0;

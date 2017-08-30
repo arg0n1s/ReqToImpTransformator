@@ -4,37 +4,133 @@
     <source href="src.xmi#/"/>
     <target href="trg.xmi#/"/>
   </correspondences>
-  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.2"/>
-    <target href="trg.xmi#//@devices.2"/>
-  </correspondences>
-  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.0"/>
-    <target href="trg.xmi#//@devices.0"/>
-  </correspondences>
-  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.4"/>
-    <target href="trg.xmi#//@devices.2"/>
-  </correspondences>
-  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.0"/>
-    <target href="trg.xmi#//@devices.0"/>
-  </correspondences>
-  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
-    <source href="src.xmi#//@agents.3"/>
-    <target href="trg.xmi#//@devices.2"/>
-  </correspondences>
-  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
     <source href="src.xmi#//@agents.1"/>
-    <target href="trg.xmi#//@devices.0"/>
+    <target href="trg.xmi#//@devices.1"/>
   </correspondences>
-  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.5"/>
+    <target href="trg.xmi#//@devices.3"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.1"/>
+    <target href="trg.xmi#//@devices.1"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
     <source href="src.xmi#//@agents.5"/>
     <target href="trg.xmi#//@devices.2"/>
   </correspondences>
-  <correspondences xsi:type="ReqToImpTransformator:ReqAgentToImplDevice">
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
     <source href="src.xmi#//@agents.1"/>
     <target href="trg.xmi#//@devices.0"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.5"/>
+    <target href="trg.xmi#//@devices.2"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.1"/>
+    <target href="trg.xmi#//@devices.0"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.5"/>
+    <target href="trg.xmi#//@devices.3"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.0"/>
+    <target href="trg.xmi#//@devices.1"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.2"/>
+    <target href="trg.xmi#//@devices.3"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.0"/>
+    <target href="trg.xmi#//@devices.1"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.2"/>
+    <target href="trg.xmi#//@devices.2"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.0"/>
+    <target href="trg.xmi#//@devices.0"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.2"/>
+    <target href="trg.xmi#//@devices.2"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.0"/>
+    <target href="trg.xmi#//@devices.0"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.2"/>
+    <target href="trg.xmi#//@devices.3"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.0"/>
+    <target href="trg.xmi#//@devices.1"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.4"/>
+    <target href="trg.xmi#//@devices.3"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.0"/>
+    <target href="trg.xmi#//@devices.1"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.4"/>
+    <target href="trg.xmi#//@devices.2"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.0"/>
+    <target href="trg.xmi#//@devices.0"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.4"/>
+    <target href="trg.xmi#//@devices.2"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.0"/>
+    <target href="trg.xmi#//@devices.0"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.4"/>
+    <target href="trg.xmi#//@devices.3"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.1"/>
+    <target href="trg.xmi#//@devices.1"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.3"/>
+    <target href="trg.xmi#//@devices.3"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.1"/>
+    <target href="trg.xmi#//@devices.1"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.3"/>
+    <target href="trg.xmi#//@devices.2"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.1"/>
+    <target href="trg.xmi#//@devices.0"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.3"/>
+    <target href="trg.xmi#//@devices.2"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqProviderToImplServer">
+    <source href="src.xmi#//@agents.1"/>
+    <target href="trg.xmi#//@devices.0"/>
+  </correspondences>
+  <correspondences xsi:type="ReqToImpTransformator:ReqConsumerToImplComputer">
+    <source href="src.xmi#//@agents.3"/>
+    <target href="trg.xmi#//@devices.3"/>
   </correspondences>
   <source href="src.xmi#/"/>
   <target href="trg.xmi#/"/>

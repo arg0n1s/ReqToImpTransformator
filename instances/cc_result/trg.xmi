@@ -11,19 +11,19 @@
     <target href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
   </cables>
   <cables xsi:type="impl:GlassFiberCable" speed="9">
-    <source href="../trg.xmi.delta.xmi#//@addedNodes.0"/>
-    <target href="../trg.xmi.delta.xmi#//@addedNodes.1"/>
+    <source href="../trg.xmi.delta.xmi#//@addedNodes.1"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.0"/>
   </cables>
   <cables xsi:type="impl:CopperCable" speed="9" target="//@devices.3">
-    <source href="../trg.xmi.delta.xmi#//@addedNodes.1"/>
+    <source href="../trg.xmi.delta.xmi#//@addedNodes.0"/>
   </cables>
   <cables xsi:type="impl:CopperCable" speed="9" target="//@devices.2">
     <source href="../trg.xmi.delta.xmi#//@addedNodes.2"/>
   </cables>
   <cables xsi:type="impl:GlassFiberCable" speed="9" source="//@devices.1">
-    <target href="../trg.xmi.delta.xmi#//@addedNodes.0"/>
+    <target href="../trg.xmi.delta.xmi#//@addedNodes.1"/>
   </cables>
   <cables xsi:type="impl:GlassFiberCable" speed="9" target="//@devices.1">
-    <source href="../trg.xmi.delta.xmi#//@addedNodes.0"/>
+    <source href="../trg.xmi.delta.xmi#//@addedNodes.1"/>
   </cables>
 </impl:Container>

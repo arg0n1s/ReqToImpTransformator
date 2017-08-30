@@ -1,0 +1,29 @@
+#using ReqToImpTransformator.*
+#using AttrCondDefLibrary.*
+
+#rule ReqConsumerIgnoreRule #extends ReqAgentIgnoreRule #with ReqToImpTransformator
+
+#source { 
+	reqContainer : requirements.Container{
+		-agents->reqProvider
+	}
+	reqProvider : requirements.Provider
+	++ reqAgent : requirements.Consumer{
+		++ -correspondingProvider->reqProvider
+	}
+}
+
+#target {
+	implContainer : implementation.Container
+}
+
+#correspondence {
+	reqContainerToImplContainer : ReqContainerToImplContainer {
+		#src->reqContainer
+		#trg->implContainer
+	}
+}
+
+#attributeConditions {
+	
+}

@@ -5,14 +5,14 @@
 
 #source { 
 	 reqConsumer : requirements.Consumer{
-		++ -correspondingProvider->reqProvider
-	}
+		-correspondingProvider->reqProvider
+	 }
 	 reqProvider : requirements.Provider
 	
 	 reqContainer : requirements.Container{
 		 -agents->reqConsumer
 		 -agents->reqProvider
-	}
+	 }
 
 }
 
@@ -29,11 +29,11 @@
 
 #correspondence {
 	
-	++ reqAgentToImplDevice1 : ReqAgentToImplDevice {
+	++ reqConsumerToImplComputer : ReqConsumerToImplComputer {
 		#src->reqConsumer
 		#trg->implComputer
 	}
-	++ reqAgentToImplDevice2 : ReqAgentToImplDevice {
+	++ reqProviderToImplServer : ReqProviderToImplServer {
 		#src->reqProvider
 		#trg->implServer
 	}
