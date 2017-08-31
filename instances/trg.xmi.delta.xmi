@@ -1,4 +1,70 @@
 <?xml version="1.0" encoding="ASCII"?>
-<org.moflon.tgg.runtime:DeltaSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+<org.moflon.tgg.runtime:DeltaSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:impl="platform:/plugin/mbse_metamodels/model/implementation.ecore" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
   <targetModel href="cc_result/trg.xmi#/"/>
+  <addedEdges src="//@addedNodes.1" name="outgoing">
+    <trg href="cc_result/trg.xmi#//@cables.5"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.0" name="incoming">
+    <trg href="cc_result/trg.xmi#//@cables.2"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.1" name="target">
+    <src href="cc_result/trg.xmi#//@cables.3"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.1" name="devices">
+    <src href="cc_result/trg.xmi#/"/>
+  </addedEdges>
+  <addedEdges name="incoming">
+    <src href="cc_result/trg.xmi#//@devices.2"/>
+    <trg href="cc_result/trg.xmi#//@cables.4"/>
+  </addedEdges>
+  <addedEdges name="incoming">
+    <src href="cc_result/trg.xmi#//@devices.2"/>
+    <trg href="cc_result/trg.xmi#//@cables.5"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.0" name="source">
+    <src href="cc_result/trg.xmi#//@cables.3"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.2" name="outgoing">
+    <trg href="cc_result/trg.xmi#//@cables.2"/>
+  </addedEdges>
+  <addedEdges name="target">
+    <src href="cc_result/trg.xmi#//@cables.4"/>
+    <trg href="cc_result/trg.xmi#//@devices.2"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.1" name="incoming">
+    <trg href="cc_result/trg.xmi#//@cables.3"/>
+  </addedEdges>
+  <addedEdges name="target">
+    <src href="cc_result/trg.xmi#//@cables.5"/>
+    <trg href="cc_result/trg.xmi#//@devices.2"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.0" name="target">
+    <src href="cc_result/trg.xmi#//@cables.2"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.1" name="source">
+    <src href="cc_result/trg.xmi#//@cables.5"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.2" name="devices">
+    <src href="cc_result/trg.xmi#/"/>
+  </addedEdges>
+  <addedEdges name="source">
+    <src href="cc_result/trg.xmi#//@cables.4"/>
+    <trg href="cc_result/trg.xmi#//@devices.3"/>
+  </addedEdges>
+  <addedEdges name="outgoing">
+    <src href="cc_result/trg.xmi#//@devices.3"/>
+    <trg href="cc_result/trg.xmi#//@cables.4"/>
+  </addedEdges>
+  <addedEdges src="//@addedNodes.0" name="outgoing">
+    <trg href="cc_result/trg.xmi#//@cables.3"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.0" name="devices">
+    <src href="cc_result/trg.xmi#/"/>
+  </addedEdges>
+  <addedEdges trg="//@addedNodes.2" name="source">
+    <src href="cc_result/trg.xmi#//@cables.2"/>
+  </addedEdges>
+  <addedNodes xsi:type="impl:Router" name="r1"/>
+  <addedNodes xsi:type="impl:Router" name="r4"/>
+  <addedNodes xsi:type="impl:Server" name="s2" maxSlots="20" MTBF="20"/>
 </org.moflon.tgg.runtime:DeltaSpecification>

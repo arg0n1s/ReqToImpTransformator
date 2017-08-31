@@ -3,21 +3,30 @@
 
 #rule ReqConsumerToComputerRule #extends ReqAgentToDeviceRule #with ReqToImpTransformator
 
-#source { 
+#source {
+	
+	reqContainer : requirements.Container {
+		++ -agents->reqAgent
+		-networkSpan->virtualNode
+	}
+	
+	virtualNode : NetworkSpan
+	 
 	++ reqAgent : requirements.Consumer
 }
 
 #target {
-	 implDevice : implementation.Computer {
-	 	-incoming->cable
-	 }
-	 
-	 cable : implementation.Cable
+	 implDevice : implementation.Computer
 }
 
 #correspondence {
 	++ reqAgentToImplDevice : ReqAgentToImplDevice {
 		#src->reqAgent
+		#trg->implDevice
+	}
+	
+	virtualNodeToComputer : VirtualNodeToComputer {
+		#src->virtualNode
 		#trg->implDevice
 	}
 }

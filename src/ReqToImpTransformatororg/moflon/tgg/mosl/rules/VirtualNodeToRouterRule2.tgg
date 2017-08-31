@@ -1,7 +1,7 @@
 #using ReqToImpTransformator.*
 #using AttrCondDefLibrary.*
 
-#abstract #rule VirtualNodeToRouterRule2 #with ReqToImpTransformator
+#rule VirtualNodeToRouterRule2 #with ReqToImpTransformator
 
 #source {
 	virtualNode : NetworkSpan
@@ -14,19 +14,19 @@
 	
 	implContainer : implementation.Container {
 		-devices->router
-		-devices->router2
+		++ -devices->router2
 		-cables->cable
 	}
 	
 	router : implementation.Router {
-		-outgoing->cable
+		++ -outgoing->cable
 	}
 	
-	cable : implementation.Cable {
-		-target->router2
-	}
+	cable : implementation.Cable
 	
-	router2 : implementation.Router
+	++ router2 : implementation.Router {
+		++ -incoming->cable
+	}
 
 }
 
@@ -34,6 +34,11 @@
 	reqContainerToImplContainer : ReqContainerToImplContainer {
 		#src->reqContainer
 		#trg->implContainer
+	}
+	
+	virtualNodeToRouter1 : VirtualNodeToRouter {
+		#src->virtualNode
+		#trg->router
 	}
 	
 	++ virtualNodeToRouter : VirtualNodeToRouter {

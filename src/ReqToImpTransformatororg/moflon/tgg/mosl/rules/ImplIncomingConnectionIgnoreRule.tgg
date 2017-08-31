@@ -1,7 +1,7 @@
 #using ReqToImpTransformator.*
 #using AttrCondDefLibrary.*
 
-#rule ImplIncomingConnectionIgnoreRule #with ReqToImpTransformator
+#abstract #rule ImplIncomingConnectionIgnoreRule #with ReqToImpTransformator
 
 #source { 
 	reqContainer : requirements.Container

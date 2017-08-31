@@ -19,32 +19,38 @@ public class CustomILPObjectiveProvider implements UserDefinedILPObjectiveProvid
 			CCMatch match = protocol.intToMatch(matchId);
 			Double weight = 0.0;
 			
-			if(match.getRuleName().equals("ReqProviderToServerRule")){
+			/*if(match.getRuleName().equals("ReqProviderToServerRule")){
 				Server s = (Server)match.getTargetMatch().getNodeMappings().get("implDevice");
 				weight = s.getMTBF().doubleValue();
-			}
+			}*/
 			
-			else if(match.getRuleName().equals("VirtualNodeToRouterRule2")||
-					match.getRuleName().equals("VirtualNodeToComputerRule")||
+			if(match.getRuleName().equals("VirtualNodeToRouterRule2")||
+					match.getRuleName().equals("VirtualNodeToComputerRule")|| 
+					match.getRuleName().equals("VirtualNodeToRouterRule1") ||
 					match.getRuleName().equals("VirtualNodeToServerRule")){
-				//if(match.getRuleName().equals("VirtualNodeToComputerRule")) {
-				//	System.out.println("Hola");
-				//}
 				//weight = (double) match.getSourceMatch().getCreatedHashSet().size();
-				weight = (double) match.getCreatedHashSet().size();
+				//weight = (double) match.getCreatedHashSet().size();
+				weight = (double) match.getSourceMatch().getCreatedHashSet().size();
+				weight += match.getTargetMatch().getCreatedHashSet().size();
+				System.out.println(weight);
 				//weight += match.getTargetMatch().getCreatedHashSet().size();
 				weight *= -0.0001;
 			}
 			
 			else{
-				//weight = (double) match.getSourceMatch().getCreatedHashSet().size();
-				//weight += match.getTargetMatch().getCreatedHashSet().size();
-				weight = (double) match.getCreatedHashSet().size();
+				weight = (double) match.getSourceMatch().getCreatedHashSet().size();
+				weight += match.getTargetMatch().getCreatedHashSet().size();
+				//weight = (double) match.getCreatedHashSet().size();
 				//System.out.println(weight);
 				//System.out.println((double) match.getCreatedHashSet().size());
 			}
 			idsToCoefficients.put(matchId, weight);
+			
+			if(match.getRuleName().equals("VirtualNodeToRouterRule2")) {
+				System.out.println("Hola");
+			}
 		}
+		System.out.println(idsToCoefficients);
 		return new UserDefinedILPObjective(idsToCoefficients, UserDefinedILPObjective.OptGoal.MAX);
 	}
 }

@@ -29,8 +29,14 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 
 			if (m.getRuleName().equals("ReqProviderToServerRule")) {
 				serverMatchesMap.put(m, protocol.matchToInt(m));
-			} else if (m.getRuleName().equals("ReqConsumerToComputerRule")) {
+			} 
+			
+			else if (m.getRuleName().equals("ReqConsumerToComputerRule")) {
 				computerMatchesMap.put(m, protocol.matchToInt(m));
+			}
+			
+			else if (m.getRuleName().equals("VirtualNodeToRouterRule1")) {
+				initRouterMatchesMap.put(m, protocol.matchToInt(m));
 			}
 		}
 
@@ -41,9 +47,9 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 
 		Collection<UserDefinedILPConstraint> results = new ArrayList<>();
 
-		results = maxSlotsConstraint(serverMatchesMap, results);
-		results = serverSpeedConstraint(serverMatchesMap, results);
-		results = computerSpeedConstraint(computerMatchesMap, results);
+		//results = maxSlotsConstraint(serverMatchesMap, results);
+		//results = serverSpeedConstraint(serverMatchesMap, results);
+		//results = computerSpeedConstraint(computerMatchesMap, results);
 		results = initRouterConstraint(initRouterMatchesMap, results);
 
 		return results;
@@ -153,9 +159,11 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 
 			idToCoefficientMap.put(r, coefficients);
 		}
+		
+		//System.out.println(idToCoefficientMap);
 
 		for (Router r : idToCoefficientMap.keySet()) {
-			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(r), "=", 1));
+			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(r), "<=", 1));
 		}
 
 		return results;

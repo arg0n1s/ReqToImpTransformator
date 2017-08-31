@@ -6,7 +6,9 @@
 #source { 
 	reqContainer : requirements.Container {
 		++ -agents->reqAgent
-	} 
+		-networkSpan->virtualNode
+	}
+	virtualNode : NetworkSpan
 	++ reqAgent : requirements.Agent
 }
 

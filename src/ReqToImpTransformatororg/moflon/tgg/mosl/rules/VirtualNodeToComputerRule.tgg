@@ -14,19 +14,19 @@
 	
 	implContainer : implementation.Container {
 		-devices->router
-		-devices->computer
+	 ++	-devices->computer
 		-cables->cable
 	}
 	
 	router : implementation.Router {
-	 	-outgoing->cable
+	 ++	-outgoing->cable
 	}
 	
-	cable : implementation.Cable {
-		-target->computer
-	}
+	cable : implementation.Cable
 	
-	computer : implementation.Computer
+	++ computer : implementation.Computer {
+		++ -incoming->cable
+	}
 
 }
 

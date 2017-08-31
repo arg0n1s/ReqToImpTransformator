@@ -3,21 +3,30 @@
 
 #rule ReqProviderToServerRule #extends ReqAgentToDeviceRule #with ReqToImpTransformator
 
-#source { 
+#source {
+	
+	reqContainer : requirements.Container {
+		++ -agents->reqAgent
+		-networkSpan->virtualNode
+	}
+	
+	virtualNode : NetworkSpan
+	 
 	++ reqAgent : requirements.Provider
 }
 
 #target {
-	 implDevice : implementation.Server {
-	 	-outgoing->cable
-	 }
-	 
-	 cable : implementation.Cable
+	 implDevice : implementation.Server
 }
 
 #correspondence {
 	++ reqAgentToImplDevice : ReqAgentToImplDevice {
 		#src->reqAgent
+		#trg->implDevice
+	}
+	
+	virtualNodeToServer : VirtualNodeToServer {
+		#src->virtualNode
 		#trg->implDevice
 	}
 }

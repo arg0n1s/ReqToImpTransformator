@@ -20,5 +20,8 @@
   <agents xsi:type="req:Provider"
       name="p3"
       speed="3"/>
+  <agents xsi:type="req:Consumer"
+      name="pc3"
+      speed="2"/>
   <networkSpan/>
 </req:Container>
