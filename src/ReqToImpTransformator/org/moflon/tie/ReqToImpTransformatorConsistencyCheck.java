@@ -26,6 +26,7 @@ public class ReqToImpTransformatorConsistencyCheck extends SynchronizationHelper
 		helper.setUserDefiendILPConstraintProvider(new CustomILPConstraintProvider());
 		helper.setUserDefiendILPObjectiveProvider(new CustomILPObjectiveProvider());
 		helper.createCorrespondences(prepareDeltas);
+		System.out.println(helper.corr.getCorrespondences().size());
 		
 		if(prepareDeltas){
 			//src and trg models are modified when preparing deltas.

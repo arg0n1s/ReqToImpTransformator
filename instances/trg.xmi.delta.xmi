@@ -4,16 +4,12 @@
   <addedEdges trg="//@addedNodes.0" name="devices">
     <src href="cc_result/trg.xmi#/"/>
   </addedEdges>
-  <addedEdges trg="//@addedNodes.2" name="devices">
-    <src href="cc_result/trg.xmi#/"/>
-  </addedEdges>
   <addedEdges trg="//@addedNodes.1" name="devices">
     <src href="cc_result/trg.xmi#/"/>
   </addedEdges>
-  <addedNodes xsi:type="impl:Router" name="r2">
-    <outgoing href="cc_result/trg.xmi#//@cables.3"/>
-    <incoming href="cc_result/trg.xmi#//@cables.2"/>
-  </addedNodes>
+  <addedEdges trg="//@addedNodes.2" name="devices">
+    <src href="cc_result/trg.xmi#/"/>
+  </addedEdges>
   <addedNodes xsi:type="impl:Router" name="r3">
     <outgoing href="cc_result/trg.xmi#//@cables.2"/>
     <outgoing href="cc_result/trg.xmi#//@cables.6"/>
@@ -23,5 +19,9 @@
     <outgoing href="cc_result/trg.xmi#//@cables.4"/>
     <outgoing href="cc_result/trg.xmi#//@cables.0"/>
     <incoming href="cc_result/trg.xmi#//@cables.1"/>
+  </addedNodes>
+  <addedNodes xsi:type="impl:Router" name="r2">
+    <outgoing href="cc_result/trg.xmi#//@cables.3"/>
+    <incoming href="cc_result/trg.xmi#//@cables.2"/>
   </addedNodes>
 </org.moflon.tgg.runtime:DeltaSpecification>

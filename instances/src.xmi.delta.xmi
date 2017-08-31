@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="ASCII"?>
 <org.moflon.tgg.runtime:DeltaSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
   <targetModel href="cc_result/src.xmi#/"/>
+  <addedEdges name="correspondingProvider">
+    <src href="cc_result/src.xmi#//@agents.5"/>
+    <trg href="cc_result/src.xmi#//@agents.1"/>
+  </addedEdges>
+  <addedEdges name="correspondingProvider">
+    <src href="cc_result/src.xmi#//@agents.2"/>
+    <trg href="cc_result/src.xmi#//@agents.0"/>
+  </addedEdges>
+  <addedEdges name="correspondingProvider">
+    <src href="cc_result/src.xmi#//@agents.3"/>
+    <trg href="cc_result/src.xmi#//@agents.1"/>
+  </addedEdges>
+  <addedEdges name="correspondingProvider">
+    <src href="cc_result/src.xmi#//@agents.4"/>
+    <trg href="cc_result/src.xmi#//@agents.0"/>
+  </addedEdges>
 </org.moflon.tgg.runtime:DeltaSpecification>

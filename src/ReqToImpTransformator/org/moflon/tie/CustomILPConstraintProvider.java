@@ -64,10 +64,14 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 	public Collection<UserDefinedILPConstraint> getUserDefinedConstraints(ConsistencyCheckPrecedenceGraph protocol) {
 		//System.out.println("CSP");
 		Map<CCMatch, Integer> implementationRequirementMatchesMap = new HashMap<>();
+		Map<CCMatch, Integer> providerServerMatchesMap = new HashMap<>();
 		for (CCMatch m : protocol.getMatches()) {
 			System.out.println(m.getRuleName());
-			if (m.getRuleName().equals("ImplToReqRule")){
+			if (m.getRuleName().equals("ImplToReqRule2")){
 				implementationRequirementMatchesMap.put(m, protocol.matchToInt(m));
+			}
+			if (m.getRuleName().equals("ImplToReqRule")){
+				providerServerMatchesMap.put(m, protocol.matchToInt(m));
 			}
 			// Hack continues here
 			if(m.getRuleName().equals("ReqContainerToImplContainerRule")){
@@ -81,7 +85,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 
 		Collection<UserDefinedILPConstraint> results = new ArrayList<>();
 
-		//results = maxSlotsConstraint(implementationRequirementMatchesMap, results);
+		//results = maxSlotsConstraint(providerServerMatchesMap, results);
 		//results = serverSpeedConstraint(implementationRequirementMatchesMap, results);
 		//results = computerSpeedConstraint(implementationRequirementMatchesMap, results);
 		results = consumerConnectedToProvider(implementationRequirementMatchesMap, results);
@@ -145,7 +149,7 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 	private Collection<UserDefinedILPConstraint> consumerConnectedToProvider(Map<CCMatch, Integer> matchesMap,
 			Collection<UserDefinedILPConstraint> results) {
 
-		Map<CCMatch, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
+		Map<String, HashMap<Integer, Double>> idToCoefficientMap = new HashMap<>();
 
 		for (CCMatch m : matchesMap.keySet()) {
 			Computer computer = (Computer) m.getTargetMatch().getNodeMappings().get("implComputer");
@@ -153,24 +157,24 @@ public class CustomILPConstraintProvider implements UserDefinedILPConstraintProv
 			Consumer consumer = (Consumer) m.getSourceMatch().getNodeMappings().get("reqConsumer");
 			Provider provider = (Provider) m.getSourceMatch().getNodeMappings().get("reqProvider");
 
-			HashMap<Integer, Double> coefficients = idToCoefficientMap.getOrDefault(consumer.getName(),
+			HashMap<Integer, Double> coefficients1 = idToCoefficientMap.getOrDefault(consumer.getName(),
 					new HashMap<>());
 			double coefficient = 0.0;
 			if(!paths.get(server).isGoalReachable(computer)){
-				coefficient += 1.0;
+				coefficient = 1.0;
 			}
-			coefficients.put(matchesMap.get(m), coefficient);
+			coefficients1.put(matchesMap.get(m), coefficient);
 			System.out.println("Phys: "+computer.getName()+"&"+server.getName()+" to -> Virt: "+consumer.getName()+"&"+provider.getName()+" -> constraint: "+coefficient);
 			//coefficients.put(matchesMap.get(m), coefficient);
 
-			idToCoefficientMap.put(m, coefficients);
+			idToCoefficientMap.put(consumer.getName(), coefficients1);
 		}
-		//System.out.println(idToCoefficientMap);
+		
 
-		for (CCMatch consumerName : idToCoefficientMap.keySet()) {
-			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(consumerName), "=", 0));
+		for (String agentName : idToCoefficientMap.keySet()) {
+			results.add(new UserDefinedILPConstraint(idToCoefficientMap.get(agentName), "<=", 0));
+			//System.out.println(idToCoefficientMap.get(agentName));
 		}
-
 		return results;
 	}
 	

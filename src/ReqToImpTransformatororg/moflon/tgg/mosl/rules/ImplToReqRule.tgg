@@ -4,35 +4,35 @@
 #rule ImplToReqRule #with ReqToImpTransformator
 
 #source { 
+	 
+	 ++ reqProvider : requirements.Provider
 	 reqConsumer : requirements.Consumer{
-		-correspondingProvider->reqProvider
+	 	++ -correspondingProvider->reqProvider
 	 }
-	 reqProvider : requirements.Provider
 	
 	 reqContainer : requirements.Container{
+		 ++ -agents->reqProvider
 		 -agents->reqConsumer
-		 -agents->reqProvider
 	 }
 
 }
 
 #target {
-	implComputer : implementation.Computer
-	implServer : implementation.Server
+	implServer : implementation.Server{
+		-outgoing->cable2
+	}
 	
 	implContainer : implementation.Container {
-		-devices->implComputer
 		-devices->implServer
+		-cables->cable2
 	}
+	
+	cable2 : implementation.Cable
 	
 }
 
 #correspondence {
 	
-	++ reqConsumerToImplComputer : ReqConsumerToImplComputer {
-		#src->reqConsumer
-		#trg->implComputer
-	}
 	++ reqProviderToImplServer : ReqProviderToImplServer {
 		#src->reqProvider
 		#trg->implServer

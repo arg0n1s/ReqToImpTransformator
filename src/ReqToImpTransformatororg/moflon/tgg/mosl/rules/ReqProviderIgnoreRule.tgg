@@ -1,7 +1,7 @@
 #using ReqToImpTransformator.*
 #using AttrCondDefLibrary.*
 
-#rule ReqProviderIgnoreRule #extends ReqAgentIgnoreRule #with ReqToImpTransformator
+#abstract #rule ReqProviderIgnoreRule #extends ReqAgentIgnoreRule #with ReqToImpTransformator
 
 #source { 
 	reqContainer : requirements.Container{
