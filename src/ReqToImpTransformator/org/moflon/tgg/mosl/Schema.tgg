@@ -1,6 +1,5 @@
 #import "platform:/plugin/mbse_metamodels/model/implementation.ecore"
 #import "platform:/plugin/mbse_metamodels/model/requirements.ecore"
-#import "platform:/plugin/VirtualMapping/model/VirtualMapping.ecore"
 
 #schema ReqToImpTransformator
 	
